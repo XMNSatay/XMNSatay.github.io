@@ -3,10 +3,7 @@
   <entry>
     <title>计算机网络</title>
     <url>/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h1><h2 id="网络接入方式"><a href="#网络接入方式" class="headerlink" title="网络接入方式"></a>网络接入方式</h2><img lazyload src="/images/loading.svg" data-src="G:\XMNSatayBlog\source\_posts\计算机网络\image-20230224202753534.png" style="zoom:67%;">
-
-<img lazyload src="/images/loading.svg" data-src="G:\XMNSatayBlog\source\_posts\计算机网络\image-20230224202753534.png" alt="image-20230224202753534" style="zoom: 67%;">
-
+    <content><![CDATA[<h1 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h1><h2 id="网络接入方式"><a href="#网络接入方式" class="headerlink" title="网络接入方式"></a>网络接入方式</h2><p><img lazyload src="/images/loading.svg" data-src="G:\XMNSatayBlog\source_posts\计算机网络\image-20230224202753534.png"></p>
 <h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p>处在因特网边缘的部分就是连接在因特网上的所有的主机。这些主机又称为端系统(End  System)。 </p>
 <p>端系统中运行的程序之间的通信方式通常可划分为两大类： </p>
 <p>客户&#x2F;服务器(Client&#x2F;Server, C&#x2F;S)方式 ：通信由客户 A发起， 向服务器 B 请求服务， 而服务器 B 向客户 A 提供服务。</p>
