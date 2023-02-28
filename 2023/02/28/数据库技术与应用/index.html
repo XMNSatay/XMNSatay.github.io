@@ -278,8 +278,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-02-28 19:20:48</span>
-            <span class="mobile">2023-02-28 19:20</span>
+            <span class="pc">2023-02-28 20:05:56</span>
+            <span class="mobile">2023-02-28 20:05</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -300,9 +300,13 @@
 
     
     
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.5k Words</span>
+        </span>
+    
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
         </span>
     
     
@@ -318,7 +322,168 @@
             
 
             <div class="article-content markdown-body">
-                
+                <h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1 绪论"></a>1 绪论</h1><h2 id="1-2-数据模型"><a href="#1-2-数据模型" class="headerlink" title="1.2 数据模型"></a>1.2 数据模型</h2><p>在数据库中用数据模型这个工具来<strong>抽象、表示和处理</strong>现实世界中的事物。</p>
+<p>通俗地讲数据模型就是现实世界的抽象和模拟。</p>
+<p>数据模型应满足三方面要求</p>
+<p><strong>能比较真实地模拟现实世界</strong></p>
+<p><strong>容易为人所理解</strong></p>
+<p><strong>便于在计算机上 实现</strong></p>
+<h3 id="两大类数据模型"><a href="#两大类数据模型" class="headerlink" title="两大类数据模型"></a>两大类数据模型</h3><p>(1) <strong>概念模型</strong>   也称信息模型，它是按用户的观点来对数据和信息建模，用于数据库设计。<br>(2) <strong>逻辑模型和物理模型</strong>   按计算机系统的观点对数据建模，用于DBMS的实现。<br>        逻辑模型主要包括网状模型、层次模型、关系模型、面向对象模型等，按计算机系统的观点对数据建模，用于DBMS实现。<br>        物理模型是对数据最底层的抽象，描述数据在系统内部的表示方式和存取方法，在磁盘或磁带上的存储方式和存取方法。</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228192613246.png" alt="image-20230228192613246" style="zoom:50%;">
+
+<h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><p><strong>概念模型的用途</strong><br>概念模型用于信息世界的建模<br>是现实世界到机器世界的一个中间层次<br>是数据库设计的有力工具<br>数据库设计人员和用户之间进行交流的语言<br><strong>对概念模型的基本要求</strong><br>较强的语义表达能力<br>能够方便、直接地表达应用中的各种语义知识<br>简单、清晰、易于用户理解</p>
+<h3 id="信息世界中的基本概念"><a href="#信息世界中的基本概念" class="headerlink" title="信息世界中的基本概念"></a>信息世界中的基本概念</h3><p><strong>(1) 实体（Entity）</strong></p>
+<p>客观存在并可相互区别的事物称为实体。可以是具体的人、事、物或抽象的概念。</p>
+<p><strong>(2) 属性（Attribute）</strong></p>
+<p>实体所具有的某一特性称为属性。一个实体可以由若干个属性来刻画。 </p>
+<p><strong>(3) 码（Key）</strong> </p>
+<p>唯一标识实体的属性集称为码</p>
+<p><strong>(4) 域（Domain）</strong> </p>
+<p>属性的取值范围称为该属性的域。 </p>
+<p><strong>(5) 实体型（Entity Type）</strong> </p>
+<p>用实体名及其属性名集合来抽象和刻画同类实体称为实体型</p>
+<p>例子：学生（学号、姓名、性别、出生年月）</p>
+<p><strong>(6) 实体集（Entity Set）</strong><br>同一类型实体的集合称为实体集：</p>
+<table>
+<thead>
+<tr>
+<th><strong>学号</strong></th>
+<th><strong>姓名</strong></th>
+<th><strong>性别</strong></th>
+<th><strong>出生日期</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20021001</td>
+<td>张三</td>
+<td>男</td>
+<td>1978-5-6</td>
+</tr>
+<tr>
+<td>20021003</td>
+<td>李四</td>
+<td>女</td>
+<td>1980-1-24</td>
+</tr>
+<tr>
+<td>20021004</td>
+<td>王五</td>
+<td>男</td>
+<td>1979-11-12</td>
+</tr>
+</tbody></table>
+<p><strong>(7) 联系（Relationship）</strong>  </p>
+<p>现实世界：事物内部以及事物之间的联系<br>信息世界：实体内部的联系和实体之间的联系</p>
+<h3 id="两个实体型之间的联系"><a href="#两个实体型之间的联系" class="headerlink" title="两个实体型之间的联系"></a>两个实体型之间的联系</h3><h4 id="一对一联系（1-1）"><a href="#一对一联系（1-1）" class="headerlink" title="一对一联系（1 : 1）"></a>一对一联系（1 : 1）</h4><p><strong>实例</strong><br>一个班级只有一个正班长，一个班长只在一个班中任职<br><strong>定义：</strong><br>    如果对于实体集A中的每一个实体，实体集B中至多有一个（也可以没有）实体与之联系，反之亦然，<strong>则称实体集A与实体集B具有一对一联系，记为1:1</strong> </p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193153537.png" alt="image-20230228193153537" style="zoom:33%;">
+
+<h4 id="一对多联系（1-n）"><a href="#一对多联系（1-n）" class="headerlink" title="一对多联系（1 : n）"></a>一对多联系（1 : n）</h4><p><strong>实例</strong><br>一个班级中有若干名学生，每个学生只在一个班级中学习<br><strong>定义：</strong><br>如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中至多只有一个实体与之联系，则称<strong>实体集A与实体集B</strong>有一对多联系，记为1:n</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193321227.png" alt="image-20230228193321227" style="zoom:33%;">
+
+<p>注意一对多联系图中<strong>1</strong>的位置</p>
+<h4 id="多对多联系（m-n）"><a href="#多对多联系（m-n）" class="headerlink" title="多对多联系（m : n）"></a>多对多联系（m : n）</h4><p><strong>实例</strong><br>课程与学生之间的联系：<br>一门课程同时有若干个学生选修<br>一个学生可以同时选修多门课程<br><strong>定义：</strong><br>如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中也有m个实体（m≥0）与之联系，则称实体集A与实体B具有多对多联系，记为m:n</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193313680.png" alt="image-20230228193313680" style="zoom:33%;">
+
+<h4 id="用图形来表示两个实体型之间的三类联系"><a href="#用图形来表示两个实体型之间的三类联系" class="headerlink" title="用图形来表示两个实体型之间的三类联系"></a>用图形来表示两个实体型之间的三类联系</h4><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193406567.png" alt="image-20230228193406567" style="zoom:50%;">
+
+<h3 id="两个以上实体型之间的联系"><a href="#两个以上实体型之间的联系" class="headerlink" title="两个以上实体型之间的联系"></a>两个以上实体型之间的联系</h3><p>若实体型E1，E2，…，En存在联系，对于实体型Ej（j&#x3D;1，2，…，i-1，i+1，…，n）中的给定实体，最多只和Ei中的一个实体相联系，则我们说Ei与E1，E2，…，Ei-1，Ei+1，…，En之间的联系是<strong>一对多</strong>的</p>
+<p><strong>实例</strong></p>
+<p>课程、教师与参考书三个实体型</p>
+<p>每一个教师可以讲授若干门课程，每门课程可以使用若干本参考书</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193534803.png" alt="image-20230228193534803" style="zoom:50%;">
+
+<p><strong>两个以上实体型间的一对一联系</strong></p>
+<p><strong>两个以上实体型间的多对多联系</strong></p>
+<h3 id="单个实体型内的联系"><a href="#单个实体型内的联系" class="headerlink" title="单个实体型内的联系"></a>单个实体型内的联系</h3><p>同一实体集内的各实体之间的关系<br><strong>一对多联系</strong><br><strong>实例</strong><br>职工实体型内部具有领导与被领导的联系<br>某一职工（干部）“领导”若干名职工<br>一个职工仅被另外一个职工直接领导<br>这是一对多的联系</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193653846.png" alt="image-20230228193653846" style="zoom:50%;">
+
+<p><strong>一对一联系和多对多联系</strong></p>
+<h3 id="概念模型的一种表示方法"><a href="#概念模型的一种表示方法" class="headerlink" title="概念模型的一种表示方法"></a>概念模型的一种表示方法</h3><p><strong>实体－联系方法(E-R方法)</strong></p>
+<h4 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h4><p><strong>实体型</strong><br>用矩形表示，矩形框内写明实体名。</p>
+<p><strong>属性</strong><br>用椭圆形表示，并用无向边将其与相应的实体连接起来</p>
+<p><strong>联系</strong><br>联系本身：<br>   用菱形表示，菱形框内写明联系名，并用无向边分别与有关实体连接起来，同时在无向边旁标上联系的类型（1:1、1:n或m:n）</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193805948.png" alt="image-20230228193805948" style="zoom:50%;">
+
+<h4 id="联系的表示方法"><a href="#联系的表示方法" class="headerlink" title="联系的表示方法"></a>联系的表示方法</h4><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193826047.png" alt="image-20230228193826047" style="zoom:50%;">
+
+<h4 id="联系的属性"><a href="#联系的属性" class="headerlink" title="联系的属性"></a>联系的属性</h4><p>联系本身也是一种实体型，也   可以有属性。如果一个联系具有属性，则这些属性也要用无向边与该联系连接起来 </p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193848342.png" alt="image-20230228193848342" style="zoom:50%;">
+
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>用E-R图表示某个工厂物资管理的概念模型<br>实体：<br>        仓库： 仓库号、面积、电话号码<br>        零件 ：零件号、名称、规格、单价、描述<br>        供应商：供应商号、姓名、地址、电话号码、帐号<br>        项目：项目号、预算、开工日期<br>        职工：职工号、姓名、年龄、职称<br>实体之间的联系如下：<br>        一个仓库可以存放多种零件，一种零件可以存放在多个仓库中。用库存量来表示某种零件在某个仓库中的数量<br>        一个仓库有多个职工当仓库保管员，一个职工只能在一个仓库工作<br>        职工之间具有领导-被领导关系。即仓库主任领导若干保管员</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194000378.png" alt="image-20230228194000378" style="zoom: 67%;">
+
+<h3 id="数据模型的组成要素"><a href="#数据模型的组成要素" class="headerlink" title="数据模型的组成要素"></a>数据模型的组成要素</h3><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><p><strong>描述数据库的组成对象，以及对象之间的联系</strong></p>
+<p><strong>描述的内容</strong><br>与数据类型、内容、性质有关的对象<br>与数据之间联系有关的对象</p>
+<p><strong>数据结构是对系统静态特性的描述</strong></p>
+<h4 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h4><p>**对数据库中各种对象(型)的实例(值)允许执行的操作及有关的操作规则</p>
+<p><strong>数据操作的类型</strong><br>查询<br>更新(包括插入、删除、修改)</p>
+<p><strong>数据模型对操作的定义</strong><br>操作的确切含义<br>操作符号<br>操作规则（如优先级）<br>实现操作的语言</p>
+<p><strong>数据操作是对系统动态特性的描述</strong></p>
+<h4 id="完整性约束条件"><a href="#完整性约束条件" class="headerlink" title="完整性约束条件"></a>完整性约束条件</h4><p><strong>一组完整性规则的集合。</strong><br>完整性规则：给定的数据模型中数据及其联系所具有的制约和储存规则，用以限定符合数据模型的数据库状态以及状态的变化，以保证数据的正确、有效、相容。</p>
+<p><strong>数据模型对完整性约束条件的定义</strong><br>必须遵守的基本的通用的完整性约束条件。<br>例如，关系模型中，任何关系必须满足实体完整性和参照完整性两个条件。</p>
+<p><strong>反映具体应用所涉及的特定的约束条件。</strong><br>例子：学校数据库中规定博士学生的年龄必须小于45岁<br>例子：银行的系统中规定帐号的余额不能小于1元</p>
+<h3 id="常用的数据模型"><a href="#常用的数据模型" class="headerlink" title="常用的数据模型"></a>常用的数据模型</h3><p>格式化模型<br>        层次模型(Hierarchical Model)<br>        网状模型(Network Model)</p>
+<p>关系模型(Relational Model)  </p>
+<p>面向对象模型(Object Oriented Model）</p>
+<p>对象关系模型(Object Relational Model)</p>
+<h4 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h4><p>层次模型用树形结构来表示各类实体以及实体间的联系 </p>
+<h5 id="层次模型-1"><a href="#层次模型-1" class="headerlink" title="层次模型"></a><strong>层次模型</strong></h5><p> 满足下面两个条件的基本层次联系的集合为层次模型</p>
+<p>1.有且只有一个结点没有双亲结点，这个结点称为根结点</p>
+<p>2.根以外的其它结点有且只有一个双亲结点</p>
+<h5 id="层次模型中的几个术语"><a href="#层次模型中的几个术语" class="headerlink" title="层次模型中的几个术语"></a><strong>层次模型中的几个术语</strong></h5><p>根结点，双亲结点，兄弟结点，叶结点</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194651033.png" alt="image-20230228194651033" style="zoom:50%;">
+
+<h5 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a><strong>表示方法</strong></h5><p><strong>实体型：</strong>用记录类型描述，每个结点表示一个记录类型（实体）</p>
+<p><strong>属性：</strong>用字段描述，每个记录类型可包含若干个字段</p>
+<p><strong>联系：</strong>用结点之间的连线表示记录类型（实体）之间的<strong>一对多</strong>的父子联系</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194729758.png" alt="image-20230228194729758" style="zoom: 50%;">
+
+<h5 id="层次模型的数据操纵"><a href="#层次模型的数据操纵" class="headerlink" title="层次模型的数据操纵"></a><strong>层次模型的数据操纵</strong></h5><p>查询 插入 删除 更新</p>
+<h5 id="层次模型的完整性约束条件"><a href="#层次模型的完整性约束条件" class="headerlink" title="层次模型的完整性约束条件"></a><strong>层次模型的完整性约束条件</strong></h5><p>无相应的双亲结点值就不能插入子女结点值<br>如果删除双亲结点值，则相应的子女结点值也被同时删除</p>
+<h5 id="层次数据模型的存储结构"><a href="#层次数据模型的存储结构" class="headerlink" title="层次数据模型的存储结构"></a><strong>层次数据模型的存储结构</strong></h5><p><strong>邻接法</strong><br>按照层次树前序遍历的顺序把所有记录值依次邻接存放，即通过物理空间的位置相邻来实现层次顺序</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194950487.png" alt="image-20230228194950487" style="zoom:50%;">
+
+<p><strong>链接法</strong><br>用指引来反映数据之间的层次联系<br>子女－兄弟链接法<br>层次序列链接法</p>
+<p><strong>子女-兄弟链接法</strong><br>每个记录设两类指针，分别指向最左边的子女（每个记录型对应一个）和最近的兄弟</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195024242.png" alt="image-20230228195024242" style="zoom:50%;">
+
+<p><strong>层次序列链接法</strong></p>
+<p>按树的前序穿越顺序链接各记录值</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195039461.png" alt="image-20230228195039461" style="zoom:50%;">
+
+<h5 id="层次模型的优缺点"><a href="#层次模型的优缺点" class="headerlink" title="层次模型的优缺点"></a><strong>层次模型的优缺点</strong></h5><p><strong>优点</strong><br>层次模型的数据结构比较简单清晰<br>查询效率高，性能优于关系模型，不低于网状模型<br>层次数据模型提供了良好的完整性支持</p>
+<p><strong>缺点</strong><br>多对多联系表示不自然<br>对插入和删除操作的限制多，应用程序的编写比较复杂<br>查询子女结点必须通过双亲结点</p>
+<h4 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h4><p>满足下面两个条件的基本层次联系的集合：</p>
+<ol>
+<li>允许一个以上的结点无双亲；</li>
+<li>一个结点可以有多于一个的双亲。<br>允许两个结点之间有多种联系（复合联系）<br>网状模型可以更直接地去描述现实世界，层次模型实际上是网状模型的一个特例</li>
+</ol>
+<h5 id="多对多联系在网状模型中的表示"><a href="#多对多联系在网状模型中的表示" class="headerlink" title="多对多联系在网状模型中的表示"></a><strong>多对多联系在网状模型中的表示</strong></h5><p>​		用网状模型间接表示多对多联系<br>​		方法：将多对多联系直接分解成一对多联系</p>
+<h5 id="数据操作-1"><a href="#数据操作-1" class="headerlink" title="数据操作"></a><strong>数据操作</strong></h5><p>网状数据库系统（如DBTG）对数据操纵加了一些限制，提供了一定的完整性约束<br>码：唯一标识记录的数据项的集合<br>支持双亲记录和子女记录之间某些约束条件<br>    有些子女记录要求双亲记录存在才能插入，双亲记录删除时也连同删除。例如学生选课记录</p>
+<h5 id="网状数据模型的存储结构"><a href="#网状数据模型的存储结构" class="headerlink" title="网状数据模型的存储结构"></a>网状数据模型的存储结构</h5><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195613303.png" alt="image-20230228195613303" style="zoom:50%;">
+
+<h5 id="网状数据模型的优缺点"><a href="#网状数据模型的优缺点" class="headerlink" title="网状数据模型的优缺点"></a>网状数据模型的优缺点</h5><p><strong>优点</strong><br>能更为直接地描述现实世界，如一个结点可以有多个双亲</p>
+<p>具有良好的性能，存取效率较高</p>
+<p><strong>缺点</strong><br>结构比较复杂，而且随着应用环境的扩大，数据库的结构就变得越来越复杂，不利于最终用户掌握</p>
+<p>DDL、DML语言复杂，用户不容易使用</p>
+<p>记录类型联系变动后涉及链接指针的调整，扩充和维护都比较复杂 </p>
+<h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>在用户观点下，关系模型中数据的逻辑结构是一张二维表，它由行和列组成。</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195759196.png" alt="image-20230228195759196" style="zoom: 50%;">
+
+<p><strong>关系（Relation）</strong><br>一个关系对应通常说的一张表<br><strong>元组（Tuple）</strong><br>表中的一行即为一个元组<br><strong>属性（Attribute）</strong><br>表中的一列即为一个属性，给每一个属性起一个名称即属性名</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195837826.png" alt="image-20230228195837826" style="zoom:50%;">
+
+<p><strong>主码（Key）</strong><br>表中的某个属性组，它可以唯一确定一个元组。<br><strong>域（Domain）</strong><br>属性的取值范围。<br><strong>分量</strong><br>元组中的一个属性值。<br><strong>关系模式</strong><br>对关系的描述<br>关系名（属性1，属性2，…，属性n）<br>学生（学号，姓名，年龄，性别，系，年级）</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228200117047.png" alt="image-20230228200117047" style="zoom:50%;">
+
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228200133118.png" alt="image-20230228200133118" style="zoom:50%;">
+
+<h5 id="数据操作是集合操作，操作对象和结果都是关系"><a href="#数据操作是集合操作，操作对象和结果都是关系" class="headerlink" title="数据操作是集合操作，操作对象和结果都是关系"></a>数据操作是集合操作，操作对象和结果都是关系</h5><p>查询 插入 删除 更新</p>
+<h5 id="完整性约束条件-1"><a href="#完整性约束条件-1" class="headerlink" title="完整性约束条件"></a>完整性约束条件</h5><p>实体完整性<br>参照完整性<br>用户定义的完整性</p>
+<h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5><p>实体及实体间的联系都用表来表示<br>表以文件形式存储<br>有的DBMS一个表对应一个操作系统文件<br>有的DBMS自己设计文件结构</p>
+<h5 id="关系数据模型的优缺点"><a href="#关系数据模型的优缺点" class="headerlink" title="关系数据模型的优缺点"></a>关系数据模型的优缺点</h5><p><strong>优点</strong><br>建立在严格的数学概念的基础上<br>可以描述一对一、一对多和多对多的联系<br>概念单一<br>        实体和各类联系都用关系来表示<br>        对数据的检索结果也是关系<br>存取路径对用户透明<br>        用户只要指出“干什么”，不必详细说明“怎么干”<br>        具有更高的数据独立性，更好的安全保密性<br>        简化了程序员的工作和数据库开发建立的工作</p>
+<p><strong>缺点</strong><br>存取路径对用户透明导致查询效率往往不如非关系数据模型<br>为提高性能，必须对用户的查询请求进行优化增加了开发DBMS的难度</p>
+
             </div>
 
             
@@ -384,7 +549,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">数据库技术与应用</div>
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E7%BB%AA%E8%AE%BA"><span class="nav-text">1 绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">1.2 数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E5%A4%A7%E7%B1%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">两大类数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="nav-text">概念模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">信息世界中的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E5%AE%9E%E4%BD%93%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-text">两个实体型之间的联系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E8%81%94%E7%B3%BB%EF%BC%881-1%EF%BC%89"><span class="nav-text">一对一联系（1 : 1）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A%E8%81%94%E7%B3%BB%EF%BC%881-n%EF%BC%89"><span class="nav-text">一对多联系（1 : n）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E8%81%94%E7%B3%BB%EF%BC%88m-n%EF%BC%89"><span class="nav-text">多对多联系（m : n）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%9B%BE%E5%BD%A2%E6%9D%A5%E8%A1%A8%E7%A4%BA%E4%B8%A4%E4%B8%AA%E5%AE%9E%E4%BD%93%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%89%E7%B1%BB%E8%81%94%E7%B3%BB"><span class="nav-text">用图形来表示两个实体型之间的三类联系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E4%BB%A5%E4%B8%8A%E5%AE%9E%E4%BD%93%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-text">两个以上实体型之间的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%B8%AA%E5%AE%9E%E4%BD%93%E5%9E%8B%E5%86%85%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-text">单个实体型内的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-text">概念模型的一种表示方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#E-R%E5%9B%BE"><span class="nav-text">E-R图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-text">联系的表示方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-text">联系的属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BE%E4%BE%8B"><span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90%E8%A6%81%E7%B4%A0"><span class="nav-text">数据模型的组成要素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="nav-text">数据操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="nav-text">完整性约束条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">常用的数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B"><span class="nav-text">层次模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B-1"><span class="nav-text">层次模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E4%B8%AA%E6%9C%AF%E8%AF%AD"><span class="nav-text">层次模型中的几个术语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-text">表示方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E6%93%8D%E7%BA%B5"><span class="nav-text">层次模型的数据操纵</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="nav-text">层次模型的完整性约束条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">层次数据模型的存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">层次模型的优缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B"><span class="nav-text">网状模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E8%81%94%E7%B3%BB%E5%9C%A8%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-text">多对多联系在网状模型中的表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C-1"><span class="nav-text">数据操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">网状数据模型的存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">网状数据模型的优缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="nav-text">关系模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E6%98%AF%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BB%93%E6%9E%9C%E9%83%BD%E6%98%AF%E5%85%B3%E7%B3%BB"><span class="nav-text">数据操作是集合操作，操作对象和结果都是关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6-1"><span class="nav-text">完整性约束条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">关系数据模型的优缺点</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
 
     </div>
 </div>
