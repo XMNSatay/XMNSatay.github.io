@@ -3,7 +3,109 @@
   <entry>
     <title>操作系统</title>
     <url>/2023/02/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="2-进程的描述与控制"><a href="#2-进程的描述与控制" class="headerlink" title="2 进程的描述与控制"></a>2 进程的描述与控制</h1>]]></content>
+    <content><![CDATA[<h1 id="2-进程的描述与控制"><a href="#2-进程的描述与控制" class="headerlink" title="2 进程的描述与控制"></a>2 进程的描述与控制</h1><h2 id="前趋图"><a href="#前趋图" class="headerlink" title="前趋图"></a>前趋图</h2><p>➢ 有向无循环图，用于描述进程之间执行的先后顺序<br>➢ 结点表示进程或程序段，有向边表示前趋关系</p>
+<p><strong>前趋图</strong>(Precedence Graph)是一个<strong>有向无循环图</strong>，记为DAG(Directed Acyclic Graph)，用于描述进程之间执行的<strong>前后关系</strong></p>
+<p>图中的每个结点可用于描述一个<strong>程序段或进程</strong>，乃至一条<strong>语句</strong>；结点间的有向边则用于表示两个结点之间存在的<strong>偏序</strong>(Partial Order)或<strong>前趋</strong>关系(Precedence Relation)“→”</p>
+<p>→&#x3D;{(Pi, Pj)|Pi must complete before  Pj may start}  </p>
+<p>如果(Pi, Pj)∈→,可写成Pi→Pj，称Pi是Pj 的<strong>直接前趋</strong>，而称Pj是Pi的<strong>直接后继</strong> </p>
+<p>在前趋图中，把没有前趋的结点称为<strong>初始结点</strong>(Initial Node)，把没有后继的结点称为<strong>终止结点</strong>(Final Node)</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228203352379.png" alt="image-20230228203352379" style="zoom: 80%;">
+
+<p>前趋图还可表示为：</p>
+<p>P&#x3D;{P1, P2, P3, P4, P5, P6, P7, P8, P9}→</p>
+<p>&#x3D;{ (P1, P2), (P1, P3), (P1, P4), (P2, P5), (P3, P5), (P4, P6), (P4, P7), (P5, P8), (P6, P8), (P7, P9), (P8, P9)}</p>
+<h2 id="程序并发执行"><a href="#程序并发执行" class="headerlink" title="程序并发执行"></a>程序并发执行</h2><p>只有不存在前趋关系的程序才有可能并发执行</p>
+<h3 id="程序并发执行时的特征"><a href="#程序并发执行时的特征" class="headerlink" title="程序并发执行时的特征"></a>程序并发执行时的特征</h3><p><strong>间断性</strong> ➢ 并发程序之间相互制约。 ➢ 执行——暂停执行——执行。 </p>
+<p><strong>失去封闭性</strong> ➢ 多个程序共享全机资源。 ➢ 执行状态受外界因素影响。 </p>
+<p><strong>不可再现性</strong> ➢ 程序经过多次执行后，虽然其执行时的环境和初始条件 都相同，但得到的结果却各不相同。</p>
+<h2 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h2><p>多道程序环境下，程序的执行属于并发执行，此时它们 将失去封闭性，并具有间断性及不可再现性的特征。因此，通常的程序不能参加并发执行。为此，引入“进程”</p>
+<h3 id="进程的定义"><a href="#进程的定义" class="headerlink" title="进程的定义"></a>进程的定义</h3><p>➢ 进程是程序的一次执行。 </p>
+<p>➢ 进程是一个程序及其数据在处理机上顺序执行时所发生的活动。</p>
+<p>➢ 进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的 一个独立单位。</p>
+<p><strong>➢ 进程是进程实体的运行过程，是系统进行资源分配和调度的一个 独立单位。</strong></p>
+<h3 id="进程和程序的区别"><a href="#进程和程序的区别" class="headerlink" title="进程和程序的区别"></a>进程和程序的区别</h3><p>进程是程序的一个实例， 是程序的一次执行。 </p>
+<p>程序是进程的代码部分。</p>
+<p> <strong>进程是活动的， 程序是静态的。</strong></p>
+<p> 进程在内存中， 程序在外存中。</p>
+<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><p><strong>动态性 （最基本的特征）</strong></p>
+<p> ➢ 有生命期 </p>
+<p><strong>并发性</strong></p>
+<p>➢ 多个进程可一 段时间内“同时”运行 </p>
+<p> 独立性 </p>
+<p>➢ 进程实体是一个能独立运行的基本单位 </p>
+<p>➢ 是系统中独立获得资源和独立调度的基本单位 </p>
+<p>异步性 </p>
+<p>➢ 按各自独立的、 不可预知的速度向前推进</p>
+<h2 id="进程的基本状态和切换"><a href="#进程的基本状态和切换" class="headerlink" title="进程的基本状态和切换"></a><u>进程的基本状态和切换</u></h2><h3 id="基本状态"><a href="#基本状态" class="headerlink" title="基本状态"></a>基本状态</h3><h4 id="创建状态（new）"><a href="#创建状态（new）" class="headerlink" title="创建状态（new）"></a>创建状态（new）</h4><h4 id="就绪状态（ready）：只需要再获得CPU"><a href="#就绪状态（ready）：只需要再获得CPU" class="headerlink" title="就绪状态（ready）：只需要再获得CPU"></a>就绪状态（ready）：只需要再获得CPU</h4><p>➢ 一个较大的程序通常都由若干个程序段组成 </p>
+<p>➢ 程序在执行时，必须按照某种先后次序逐个执行，仅当前一操作执行完后，才能执行后继操作。 </p>
+<h4 id="执行状态（running）：已获得CPU，正在执行的状态"><a href="#执行状态（running）：已获得CPU，正在执行的状态" class="headerlink" title="执行状态（running）：已获得CPU，正在执行的状态"></a>执行状态（running）：已获得CPU，正在执行的状态</h4><p>➢ 单处理机：一个进程处于执行状态 </p>
+<p>➢ 多处理机：多个进程处于执行状态 </p>
+<h4 id="阻塞状态（block-x2F-waiting）：进程等待某些事件发生的状态"><a href="#阻塞状态（block-x2F-waiting）：进程等待某些事件发生的状态" class="headerlink" title="阻塞状态（block &#x2F; waiting）：进程等待某些事件发生的状态"></a>阻塞状态（block &#x2F; waiting）：进程等待某些事件发生的状态</h4><p>➢ 正在执行的进程由于发生某事件而暂时无法继续执行的状态 </p>
+<p>➢ 典型事件：请求I&#x2F;O、申请缓冲空间 </p>
+<p>➢ 根据阻塞原因，设置多个阻塞队列</p>
+<h4 id="终止状态（terminated）"><a href="#终止状态（terminated）" class="headerlink" title="终止状态（terminated）"></a>终止状态（terminated）</h4><p><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228204454242.png" alt="image-20230228204454242"></p>
+<h3 id="进程状态的转换"><a href="#进程状态的转换" class="headerlink" title="进程状态的转换"></a>进程状态的转换</h3><p><strong>➢ 运行态变为就绪态</strong> </p>
+<p>强制终止某进程的运行（系统原因） </p>
+<p><strong>➢ 运行态变为阻塞态</strong> </p>
+<p>运行进程等待外部事件发生（自身 原因） </p>
+<p><strong>➢ 阻塞态变为就绪态</strong> </p>
+<p>外部事件已经发生，可准备运行 </p>
+<p><strong>➢ 就绪态变为运行态</strong> </p>
+<p>停止其他进程运行后，运行该进程 占用CPU</p>
+<h3 id="挂起操作及进程状态的转换"><a href="#挂起操作及进程状态的转换" class="headerlink" title="挂起操作及进程状态的转换"></a>挂起操作及进程状态的转换</h3><p>为什么引入挂起操作？ ➢ 终端用户的请求 ➢ 父进程请求 ➢ 负荷调节的需要 （实时系统） ➢ 操作系统的需要</p>
+<h4 id="引入挂起操作后三个进程状态的转换"><a href="#引入挂起操作后三个进程状态的转换" class="headerlink" title="引入挂起操作后三个进程状态的转换"></a>引入挂起操作后三个进程状态的转换</h4><p>活动就绪——〉静止就绪（挂起）<br>活动阻塞——〉静止阻塞（挂起）<br>静止就绪——〉活动就绪（激活）<br>静止阻塞——〉活动阻塞（激活）<br>静止阻塞——〉静止就绪</p>
+<p><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228204734947.png" alt="image-20230228204734947"></p>
+<h2 id="进程管理中的数据结构——PCB"><a href="#进程管理中的数据结构——PCB" class="headerlink" title="进程管理中的数据结构——PCB"></a>进程管理中的数据结构——PCB</h2><p>PCB是进程的一部分， 是操作系统中最重要的<strong>记录型数据结构</strong>，是进程存在的唯一标志，常驻内存。</p>
+<p>专门的数据结构，与进程一一对应。 </p>
+<p>➢ 为描述和控制进程的运行，系统为每个进程定义了一个数据结构——<strong>进程控制块</strong> </p>
+<p>➢ <strong>PCB</strong>（Process Control Block），是进程实体的一部分，记录了操作系统所需的、用于描述进程<strong>当前状况</strong>以及<strong>控制进程运行</strong>的全部信息 </p>
+<p>➢ OS是根据PCB来对并发执行的进程进行控制和管理的</p>
+<p>◆<strong>进程＝程序＋数据＋PCB</strong> ，即进程是一个程 序及其数据在处理机上顺序地执行时所发生 的活动 </p>
+<p>◆ 进程控制块<strong>是进程存在的唯一标志</strong>。当系统 创建一个进程时，必须为它设置一个 PCB， 然后根据PCB的信息对进程<strong>实施控制管理</strong>， 进程任务完成时，系统收回它的PCB，进程也随之消亡</p>
+<h3 id="PCB的作用"><a href="#PCB的作用" class="headerlink" title="PCB的作用"></a>PCB的作用</h3><p>➢ 作为独立运行基本单位的标志； ➢ 能实现间断性运行方式； ➢ 提供进程管理所需要的信息； ➢ 提供进程调度所需要的信息； ➢ 实现与其他进程的同步与通信。</p>
+<h3 id="PCB中的信息"><a href="#PCB中的信息" class="headerlink" title="PCB中的信息"></a>PCB中的信息</h3><p>➢ <strong>进程标识信息</strong>：PID, PPID</p>
+<pre><code> 用于唯一地标识一个进程。一个进程通常 有两种标识符： 1）**内部标识符**，数字 标识符；2）**外部标识符**，它由创建者提 供，描述进程的家族关系。 
+</code></pre>
+<p>➢ <strong>处理器状态信息</strong>：PC, PSW, 堆栈指针、寄 存器 </p>
+<p>➢ <strong>进程调度信息</strong>：与进程调度和进程对换有关 的信息，包括： 进程状态、进程优先级、进 程调度所需的其它信息、事件 </p>
+<p>➢ <strong>进程控制信息</strong>：程序和数据的地址、进程同 步和通信机制、资源清单、链接指针</p>
+<h3 id="创建状态和终止状态——申请和回收PCB"><a href="#创建状态和终止状态——申请和回收PCB" class="headerlink" title="创建状态和终止状态——申请和回收PCB"></a>创建状态和终止状态——申请和回收PCB</h3><p><strong>创建状态</strong> ➢申请一个空白PCB；填写PCB；分配资源；设置就绪状态插入就绪队列</p>
+<p><strong>终止状态</strong> ➢等待OS善后； ➢收回PCB</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228205617028.png" alt="image-20230228205617028" style="zoom:67%;">
+
+<h3 id="PCB的组织方式"><a href="#PCB的组织方式" class="headerlink" title="PCB的组织方式"></a>PCB的组织方式</h3><h4 id="线性方式"><a href="#线性方式" class="headerlink" title="线性方式"></a>线性方式</h4><ol>
+<li>所有PCB组织在一张线形表，表的首址放在内存专用区域</li>
+<li>实现简单</li>
+<li>查找效率低</li>
+</ol>
+<h4 id="链接方式"><a href="#链接方式" class="headerlink" title="链接方式"></a>链接方式</h4><p>通过PCB中的连接字，将具有相同状态的PCB分别链接成一个队列</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228205904622.png" alt="image-20230228205904622" style="zoom:67%;">
+
+<h4 id="索引方式"><a href="#索引方式" class="headerlink" title="索引方式"></a>索引方式</h4><p>系统根据所有进程状态的不同，建立几张索引表</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228205912228.png" alt="image-20230228205912228" style="zoom:67%;">
+
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><h3 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h3><p>① 申请空白PCB； ② 分配所需资源； ③ 初始化PCB； ④ 插入就绪队列。</p>
+<h4 id="进程的层次结构"><a href="#进程的层次结构" class="headerlink" title="进程的层次结构"></a>进程的层次结构</h4><p>创建进程的进程是父进程，被创建的进程成为子进程</p>
+<h4 id="进程图"><a href="#进程图" class="headerlink" title="进程图"></a>进程图</h4><p>➢ 描述进程家族关系的有向树</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228210211006.png" alt="image-20230228210211006" style="zoom:67%;">
+
+<h4 id="引起进程创建的事件（负责不同的任务）"><a href="#引起进程创建的事件（负责不同的任务）" class="headerlink" title="引起进程创建的事件（负责不同的任务）"></a>引起进程创建的事件（负责不同的任务）</h4><p>➢ 用户登录、作业调度、提供服务、应用请求</p>
+<h3 id="进程的终止"><a href="#进程的终止" class="headerlink" title="进程的终止"></a>进程的终止</h3><p>引起进程终止的事件：正常结束、异常结束、外界干预</p>
+<h4 id="进程的终止过程"><a href="#进程的终止过程" class="headerlink" title="进程的终止过程"></a>进程的终止过程</h4><p>1 根据被终止进程的标识符，从PCB集合中检索出该进程的PCB，从中读出该进程的状态；</p>
+<p>2 若被终止进程正处于执行状态，应立即终止该进程的执行，并设置调度标志为真，用于指示该进程被终止后应重新进行调度；</p>
+<p>3 若该进程还有子孙进程，还应将其所有子进程予以终止；（部分级联终止系统）</p>
+<p>4 将该进程所拥有的全部资源，或者归还给其父进程或系统；</p>
+<p>5 将被终止进程（PCB）从所在队列中移去。</p>
+<h3 id="进程的阻塞与唤醒"><a href="#进程的阻塞与唤醒" class="headerlink" title="进程的阻塞与唤醒"></a>进程的阻塞与唤醒</h3><h4 id="引起进程阻塞和唤醒的事件"><a href="#引起进程阻塞和唤醒的事件" class="headerlink" title="引起进程阻塞和唤醒的事件"></a>引起进程阻塞和唤醒的事件</h4><p>➢ 向系统请求共享资源失败；等待某种操作的完成；新数据尚未到达；等待新 任务的到达。</p>
+<h4 id="进程阻塞过程"><a href="#进程阻塞过程" class="headerlink" title="进程阻塞过程"></a>进程阻塞过程</h4><p>➢ 阻塞原语Block()。</p>
+<p>➢ 进程的阻塞是进程自身的一种主动行为。 </p>
+<p>➢ 具体过程：停止执行；状态由执行改为阻塞；将PCB插入阻塞队列。</p>
+<h4 id="进程唤醒过程"><a href="#进程唤醒过程" class="headerlink" title="进程唤醒过程"></a>进程唤醒过程</h4><p>➢ 唤醒原语Wakeup()。</p>
+<p>➢ 具体过程：从阻塞队列中移出；状态由阻塞改为就绪；将PCB插入 就绪队列。</p>
+<p><strong>➢ 必须成对使用Block和Wakeup原语。</strong></p>
+<h3 id="进程的挂起与激活"><a href="#进程的挂起与激活" class="headerlink" title="进程的挂起与激活"></a>进程的挂起与激活</h3><p>Suspend()原语</p>
+<p>Active()原语</p>
+]]></content>
       <tags>
         <tag>Note</tag>
       </tags>
