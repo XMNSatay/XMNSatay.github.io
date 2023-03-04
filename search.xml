@@ -160,153 +160,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络</title>
-    <url>/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h1><h2 id="网络接入方式"><a href="#网络接入方式" class="headerlink" title="网络接入方式"></a>网络接入方式</h2><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224202753534.png" alt="image-20230224202753534" style="zoom: 67%;">
-
-<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p>处在因特网边缘的部分就是连接在因特网上的所有的主机。这些主机又称为端系统(End  System)。 </p>
-<p>端系统中运行的程序之间的通信方式通常可划分为两大类： </p>
-<p>客户&#x2F;服务器(Client&#x2F;Server, C&#x2F;S)方式 ：通信由客户 A发起， 向服务器 B 请求服务， 而服务器 B 向客户 A 提供服务。</p>
-<p> 对等(Peer-to-Peer , P2P)方式：Peer既是客户，又是服务器</p>
-<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><p>因特网中最复杂的部分。 </p>
-<p>功能：向网络边缘中的大量主机提供连通性， 使边缘部分中的任何一个主机都能够和其他主机 通信(即发送或接收数据) </p>
-<p>核心设备：路由器(Router) </p>
-<p>路由器是实现<strong>分组交换</strong>(Packet Switching)的关键 构件，其任务是<strong>转发收到的分组</strong>，这是网络核心 部分最重要的功能</p>
-<h2 id="电路交换和分组交换"><a href="#电路交换和分组交换" class="headerlink" title="电路交换和分组交换"></a>电路交换和分组交换</h2><p>“交换”(switching)的含义就是转接——把一条电话线转接到另一条电话线，使它们连通起来。 </p>
-<p>从通信资源的分配角度来看， “交换”就是按照某种方式动态地分配传输线路的资源。</p>
-<h3 id="电话系统（电路交换）"><a href="#电话系统（电路交换）" class="headerlink" title="电话系统（电路交换）"></a>电话系统（电路交换）</h3><p><strong>笨终端</strong>，聪明的<strong>网络</strong> </p>
-<p>确保每个网络部件都是可靠的 </p>
-<p>​		系统可靠性＝部件可靠性 </p>
-<p>​		通过局部冗余实现部件的高可靠性 </p>
-<p>​		期望每个部件都能正常工作，部件失败的可能性 很低 </p>
-<p>需要人工配置的，高度控制的网络</p>
-<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><p>电路交换分为三个阶段： <strong>建立连接、通信、释放连接</strong></p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224203906385.png" alt="image-20230224203906385" style="zoom: 50%;">
-
-<h3 id="分组交换系统"><a href="#分组交换系统" class="headerlink" title="分组交换系统"></a>分组交换系统</h3><p>建立在简单的、不可靠部件上的可靠系统 </p>
-<p>自适应的系统 </p>
-<p>聪明的<strong>终端</strong>，可以修正传输错误 </p>
-<p>分组交换网络抵御故障的能力较强，重新传输 的是出问题的数据包、而不是全部信息；如果数据包遇到计算机发生故障或者线路中断，会 另找其他的传输路径。</p>
-<h4 id="主要特点-1"><a href="#主要特点-1" class="headerlink" title="主要特点"></a>主要特点</h4><p>在发送端，先把较长的报文划分成较短的、固定长度的数据段（分组）;</p>
-<p>每一个数据段前面添加上首部构成分组; </p>
-<p>依次把各分组发送到接收端; </p>
-<p>接收端收到分组后剥去首部还原成报文</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204422256.png" alt="image-20230224204422256" style="zoom:50%;">
-
-<p>数据先分成分组后再传输</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204437793.png" alt="image-20230224204437793" style="zoom:50%;">
-
-<p>每个分组单独选路</p>
-<h4 id="路由器的处理过程"><a href="#路由器的处理过程" class="headerlink" title="路由器的处理过程"></a>路由器的处理过程</h4><p>在路由器中的输入和输出端口之间没有直接连线（即没有建立物理连接）。</p>
-<p>路由器处理分组的过程是：</p>
-<p>​	①把收到的分组先放入缓存(暂时存储); </p>
-<p>​	②查找转发表，找出到某个目的地址应从哪个 端口转发; </p>
-<p>​	③把分组送到适当的端口转发出去</p>
-<p><strong>&#x3D;&#x3D;存储转发&#x3D;&#x3D;</strong></p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204642729.png" alt="image-20230224204642729" style="zoom:50%;">
-
-<p>主机和路由器的作用不同 </p>
-<p>​	主机是为用户进行信息处理的，并向网络发送分组，从网络接收分组 </p>
-<p>​	路由器对分组进行<strong>存储转发</strong>，最后把 分组交付目的主机</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204758430.png" alt="image-20230224204758430" style="zoom:67%;">
-
-<h4 id="分组交换的优点"><a href="#分组交换的优点" class="headerlink" title="分组交换的优点"></a>分组交换的优点</h4><p><strong>高效</strong> <strong>动态分配</strong>传输带宽，对通信链路是逐段占用 </p>
-<p><strong>灵活</strong> 以<strong>分组</strong>为传送单位和查找路由 </p>
-<p><strong>迅速</strong> <strong>不必先建立连接</strong>就能向其他主机 发送分组 </p>
-<p><strong>可靠</strong> 保证可靠性的网络协议；分布式的 路由选择协议使网络有很好的<strong>生存性</strong></p>
-<h4 id="分组交换带来的问题"><a href="#分组交换带来的问题" class="headerlink" title="分组交换带来的问题"></a>分组交换带来的问题</h4><p>分组在各结点存储转发时需要排队， 并要检查分组首部决定向何处转发， 这就会㐀成一定的<strong>时延</strong> </p>
-<p>分组必须携带的首部(里面有必不可少 的控制信息)也㐀成了一定的<strong>开销</strong></p>
-<h3 id="分组交换和电路交换的时延特性"><a href="#分组交换和电路交换的时延特性" class="headerlink" title="分组交换和电路交换的时延特性"></a>分组交换和电路交换的时延特性</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204939467.png" alt="image-20230224204939467" style="zoom:67%;">
-
-<p>电路交换时延与数据长度有关</p>
-<p>分组交换时延：转发时延（路由器）+传输时延</p>
-<h2 id="计算机网络的类型"><a href="#计算机网络的类型" class="headerlink" title="计算机网络的类型"></a>计算机网络的类型</h2><h3 id="WAN（Wide-Area-Network）-也称为远程网"><a href="#WAN（Wide-Area-Network）-也称为远程网" class="headerlink" title="WAN（Wide Area Network）,也称为远程网"></a>WAN（Wide Area Network）,也称为远程网</h3><p>通信子网主要使用分组交换技术</p>
-<h3 id="城域网（Metropolitan-Area-Network-MAN"><a href="#城域网（Metropolitan-Area-Network-MAN" class="headerlink" title="城域网（Metropolitan Area Network, MAN)"></a>城域网（Metropolitan Area Network, MAN)</h3><h3 id="局域网-Local-Area-Network，LAN"><a href="#局域网-Local-Area-Network，LAN" class="headerlink" title="局域网(Local Area Network，LAN)"></a>局域网(Local Area Network，LAN)</h3><p>不存在路由选择问题</p>
-<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105042449.png" alt="image-20230304105042449" style="zoom: 50%;">
-
-<h3 id="局域网和广域网（WAN和LAN）"><a href="#局域网和广域网（WAN和LAN）" class="headerlink" title="局域网和广域网（WAN和LAN）"></a>局域网和广域网（WAN和LAN）</h3><p><strong>局域网和广域网的侧重点不同：</strong><br>LAN：<strong>共享信道，冲突算法</strong><br>解决网络中随时可能产生的冲突，减少冲突，<br>减少错误<br>WAN：网状拓扑，<strong>路由算法</strong><br>找出一条最佳的路径，从而加快转发㏿度，<br>减少错误</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105216611.png" alt="image-20230304105216611" style="zoom:50%;">
-
-<h3 id="ISP和骨干网"><a href="#ISP和骨干网" class="headerlink" title="ISP和骨干网"></a>ISP和骨干网</h3><p>ISP：网络服务提供商 Internet Service Provider</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105314605.png" alt="image-20230304105314605" style="zoom:50%;">
-
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105323081.png" alt="image-20230304105323081" style="zoom:50%;">
-
-<p>把城市之间连接起来的网就叫<strong>骨干网</strong><br><strong>直接和国外连接（即有国际出口）</strong><br>其他有接入功能的ISP通过骨干网连到国外<br>“骨干网”通常是用于描述大型网络结构时经常使用的词语，描述网络结构，而非具体使用的传输方式或协议<br>骨干网一般都是广域网:作用范围几十到几千<br>公里</p>
-<h2 id="衡量网络性能的指标"><a href="#衡量网络性能的指标" class="headerlink" title="衡量网络性能的指标"></a>衡量网络性能的指标</h2><h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4><p>比特(bit，位)是计算机中数据量的单位，也是信息论中使用的信息量的单位。</p>
-<p>速率即<strong>数据率</strong>(data rate)或比特率(bit rate)是连接在计算机网络上的主机<strong>在数字信道上传输数据的速率</strong>，是一个最重要的性能指标。速率的单位是 bps，kbps，Mbps，Gbps 等</p>
-<p>速率往往是指额定速率或标称速率</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105529979.png" alt="image-20230304105529979" style="zoom:67%;">
-
-<h4 id="带宽与位宽度"><a href="#带宽与位宽度" class="headerlink" title="带宽与位宽度"></a>带宽与位宽度</h4><p>数字信号流随时间的变化：在时间轴上信 号的宽度随带宽的增大而变窄（位时间）</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105604239.png" alt="image-20230304105604239" style="zoom:67%;">
-
-<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><h4 id="发送时延"><a href="#发送时延" class="headerlink" title="发送时延"></a>发送时延</h4><p>发送数据时，数据块从节点进入到传输媒体所需要的时间。 </p>
-<p>从发送数据块的第一个比特算起，到该数据块的最后一个比特发送完毕所需的时间。<br>$$<br>发送时延 &#x3D; \frac{数据块长度 \ (bits)}{信道带宽 \ (bits&#x2F;s)}<br>$$</p>
-<h4 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h4><p>电磁波在信道中需要传播一定的距离而花费的时间。 </p>
-<p>信号传输速率（即发送速率）和信号在信道上的传播速率是完全不同的概念<br>$$<br>传播时延 &#x3D; \frac{信道长度 \ (m)}{信号在信道上的传播速率 \ (m&#x2F;s)}<br>$$</p>
-<h4 id="处理时延"><a href="#处理时延" class="headerlink" title="处理时延"></a>处理时延</h4><p>交换结点为存储转发而进行一些 必要的处理所花费的时间</p>
-<h4 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h4><p>结点缓存队列中分组排队所经历的时延 </p>
-<p><strong>排队时延的长短往往取决于网络中当时的通信量</strong></p>
-<h4 id="数据经历的总时延"><a href="#数据经历的总时延" class="headerlink" title="数据经历的总时延"></a>数据经历的总时延</h4><p>$$<br>总时延&#x3D;发送时延+传播时延+处理时延+排队时延<br>$$</p>
-<h4 id="时延的产生"><a href="#时延的产生" class="headerlink" title="时延的产生"></a>时延的产生</h4><p>从结点 A 向结点 B 发送数据，四种时延所产生 的位置</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110530843.png" alt="image-20230304110530843" style="zoom:67%;">
-
-<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>吞吐量：每秒能够成功传输的数据量(瞬时、 平均) </p>
-<p>吞吐量与带宽的区分：两者的单位都是bps. </p>
-<p>英文：吞吐量:throughput 带宽: bandwidth </p>
-<p>通信链路的带宽一般是指链路上每秒所能传送 的比特数，以太网的带宽是10Mbps</p>
-<p>区分链路上的可用带宽与实际链路中每秒所能 传送的比特数（吞吐量），用“吞吐量”来表示 一个系统的测试性能 </p>
-<p>因为实现受各种低效率因素的影响，由一段带 宽为10Mbps的链路连接的一对节点可能只达到 2Mbps的吞吐量。 </p>
-<p>这样就意味着，一个主机上的应用能够以 2Mbps的速度向另外的一个主机发送数据。</p>
-<p>每个连接的端到端吞吐量： min(Rc, Rs,  R&#x2F;10) </p>
-<p>实际上 Rc 或 Rs 也可 能是瓶颈</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110729549.png" alt="image-20230304110729549" style="zoom:50%;">
-
-<h3 id="因特网钟主机的通信过程"><a href="#因特网钟主机的通信过程" class="headerlink" title="因特网钟主机的通信过程"></a>因特网钟主机的通信过程</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110810533.png" alt="image-20230304110810533" style="zoom:67%;">
-
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110820782.png" alt="image-20230304110820782" style="zoom:67%;">
-
-<h2 id="协议和层次体系结构"><a href="#协议和层次体系结构" class="headerlink" title="协议和层次体系结构"></a>协议和层次体系结构</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>协议是通信实体（如网络应用程序）之 间通信所必须遵守的<strong>规则</strong></p>
-<p>协议定义了在两个或多个通信实体之间 交换的<strong>报文格式和次序</strong>，以及在报文 传输和&#x2F;或接收或其他事件方面所采取的 <strong>动作</strong></p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110925863.png" alt="image-20230304110925863" style="zoom:67%;">
-
-<h3 id="协议的组成"><a href="#协议的组成" class="headerlink" title="协议的组成"></a>协议的组成</h3><p>语法：数据与控制信息的结构或格式 </p>
-<p>语义：需要发出何种控制信息，完成何种动作以及做出何种响应 </p>
-<p>同步：事件实现顺序的详细说明</p>
-<h3 id="分层体系结构"><a href="#分层体系结构" class="headerlink" title="分层体系结构"></a>分层体系结构</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>实体、协议、服务和服务访问点<br>        实体(Entity) 表示任何可发送或接收信息的硬件或软件进程。<br>        协议是控制两个对等实体（Peer Entity）进行通信的规则的集合。<br>        在协议的控制下，两个对等实体间的通信使得本层能够向上一层提供服务。<br>        要实现本层协议，还需要使用下层所提供的服务。</p>
-<h4 id="协议和服务"><a href="#协议和服务" class="headerlink" title="协议和服务"></a>协议和服务</h4><p>本层服务的实体只能看见服务而无法看见下 面的协议。 </p>
-<p>下面的协议对上面的服务用户是<strong>透明的</strong>。 </p>
-<p>协议是“<strong>水平的</strong>” ，即协议是控制对等实体之 间通信的规则。 </p>
-<p>服务是“<strong>垂直的</strong>” ，即服务是由下层向上层通 过层间接口提供的。 </p>
-<p>同一系统相邻两层的实体进行交互的地方， 称为<strong>服务访问点 SAP</strong> (Service Access Point)。</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111236496.png" alt="image-20230304111236496" style="zoom:67%;">
-
-<h3 id="TCP-x2F-IP协议栈"><a href="#TCP-x2F-IP协议栈" class="headerlink" title="TCP&#x2F;IP协议栈"></a>TCP&#x2F;IP协议栈</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111332296.png" alt="image-20230304111332296" style="zoom:67%;">
-
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111407318.png" alt="image-20230304111407318" style="zoom: 67%;">
-
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>发送的数据向下 接收的数据向上</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111453990.png" alt="image-20230304111453990" style="zoom:67%;">
-
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111510843.png" alt="image-20230304111510843" style="zoom:67%;">
-
-<p>示例： 我要访问北邮的主页，通信过程是怎样的？</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111527369.png" alt="image-20230304111527369" style="zoom: 67%;">
-
-<h4 id="分层体系结构的要点"><a href="#分层体系结构的要点" class="headerlink" title="分层体系结构的要点"></a>分层体系结构的要点</h4><ol>
-<li>网络体系结构<strong>分几层</strong>？每层的<strong>功能</strong>是什么？ 有哪些协议？ </li>
-<li>不同系统的<strong>对等层实体</strong>遵守<strong>协议</strong>进行通信 </li>
-<li>协议的实现需要下层的<strong>服务</strong> </li>
-<li>只有最底层是实际通信，其他各层都是虚拟通信，数据流向：U型 </li>
-<li>除最底层之外，每层对于上层的数据进行<strong>封装</strong>（打包：增加包头&#x2F;尾，包头&#x2F;尾的格式和内容由协议规定）</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据库技术与应用</title>
     <url>/2023/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1 绪论"></a>1 绪论</h1><h2 id="1-2-数据模型"><a href="#1-2-数据模型" class="headerlink" title="1.2 数据模型"></a>1.2 数据模型</h2><p>在数据库中用数据模型这个工具来<strong>抽象、表示和处理</strong>现实世界中的事物。</p>
@@ -503,6 +356,153 @@
 ]]></content>
       <tags>
         <tag>Sketch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h1><h2 id="网络接入方式"><a href="#网络接入方式" class="headerlink" title="网络接入方式"></a>网络接入方式</h2><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224202753534.png" alt="image-20230224202753534" style="zoom: 67%;">
+
+<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p>处在因特网边缘的部分就是连接在因特网上的所有的主机。这些主机又称为端系统(End  System)。 </p>
+<p>端系统中运行的程序之间的通信方式通常可划分为两大类： </p>
+<p>客户/服务器(Client/Server, C/S)方式 ：通信由客户 A发起， 向服务器 B 请求服务， 而服务器 B 向客户 A 提供服务。</p>
+<p> 对等(Peer-to-Peer , P2P)方式：Peer既是客户，又是服务器</p>
+<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><p>因特网中最复杂的部分。 </p>
+<p>功能：向网络边缘中的大量主机提供连通性， 使边缘部分中的任何一个主机都能够和其他主机 通信(即发送或接收数据) </p>
+<p>核心设备：路由器(Router) </p>
+<p>路由器是实现<strong>分组交换</strong>(Packet Switching)的关键 构件，其任务是<strong>转发收到的分组</strong>，这是网络核心 部分最重要的功能</p>
+<h2 id="电路交换和分组交换"><a href="#电路交换和分组交换" class="headerlink" title="电路交换和分组交换"></a>电路交换和分组交换</h2><p>“交换”(switching)的含义就是转接——把一条电话线转接到另一条电话线，使它们连通起来。 </p>
+<p>从通信资源的分配角度来看， “交换”就是按照某种方式动态地分配传输线路的资源。</p>
+<h3 id="电话系统（电路交换）"><a href="#电话系统（电路交换）" class="headerlink" title="电话系统（电路交换）"></a>电话系统（电路交换）</h3><p><strong>笨终端</strong>，聪明的<strong>网络</strong> </p>
+<p>确保每个网络部件都是可靠的 </p>
+<p>​		系统可靠性＝部件可靠性 </p>
+<p>​		通过局部冗余实现部件的高可靠性 </p>
+<p>​		期望每个部件都能正常工作，部件失败的可能性 很低 </p>
+<p>需要人工配置的，高度控制的网络</p>
+<h4 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h4><p>电路交换分为三个阶段： <strong>建立连接、通信、释放连接</strong></p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224203906385.png" alt="image-20230224203906385" style="zoom: 50%;">
+
+<h3 id="分组交换系统"><a href="#分组交换系统" class="headerlink" title="分组交换系统"></a>分组交换系统</h3><p>建立在简单的、不可靠部件上的可靠系统 </p>
+<p>自适应的系统 </p>
+<p>聪明的<strong>终端</strong>，可以修正传输错误 </p>
+<p>分组交换网络抵御故障的能力较强，重新传输 的是出问题的数据包、而不是全部信息；如果数据包遇到计算机发生故障或者线路中断，会 另找其他的传输路径。</p>
+<h4 id="主要特点-1"><a href="#主要特点-1" class="headerlink" title="主要特点"></a>主要特点</h4><p>在发送端，先把较长的报文划分成较短的、固定长度的数据段（分组）;</p>
+<p>每一个数据段前面添加上首部构成分组; </p>
+<p>依次把各分组发送到接收端; </p>
+<p>接收端收到分组后剥去首部还原成报文</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204422256.png" alt="image-20230224204422256" style="zoom:50%;">
+
+<p>数据先分成分组后再传输</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204437793.png" alt="image-20230224204437793" style="zoom:50%;">
+
+<p>每个分组单独选路</p>
+<h4 id="路由器的处理过程"><a href="#路由器的处理过程" class="headerlink" title="路由器的处理过程"></a>路由器的处理过程</h4><p>在路由器中的输入和输出端口之间没有直接连线（即没有建立物理连接）。</p>
+<p>路由器处理分组的过程是：</p>
+<p>​	①把收到的分组先放入缓存(暂时存储); </p>
+<p>​	②查找转发表，找出到某个目的地址应从哪个 端口转发; </p>
+<p>​	③把分组送到适当的端口转发出去</p>
+<p><strong>==存储转发==</strong></p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204642729.png" alt="image-20230224204642729" style="zoom:50%;">
+
+<p>主机和路由器的作用不同 </p>
+<p>​	主机是为用户进行信息处理的，并向网络发送分组，从网络接收分组 </p>
+<p>​	路由器对分组进行<strong>存储转发</strong>，最后把 分组交付目的主机</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204758430.png" alt="image-20230224204758430" style="zoom:67%;">
+
+<h4 id="分组交换的优点"><a href="#分组交换的优点" class="headerlink" title="分组交换的优点"></a>分组交换的优点</h4><p><strong>高效</strong> <strong>动态分配</strong>传输带宽，对通信链路是逐段占用 </p>
+<p><strong>灵活</strong> 以<strong>分组</strong>为传送单位和查找路由 </p>
+<p><strong>迅速</strong> <strong>不必先建立连接</strong>就能向其他主机 发送分组 </p>
+<p><strong>可靠</strong> 保证可靠性的网络协议；分布式的 路由选择协议使网络有很好的<strong>生存性</strong></p>
+<h4 id="分组交换带来的问题"><a href="#分组交换带来的问题" class="headerlink" title="分组交换带来的问题"></a>分组交换带来的问题</h4><p>分组在各结点存储转发时需要排队， 并要检查分组首部决定向何处转发， 这就会㐀成一定的<strong>时延</strong> </p>
+<p>分组必须携带的首部(里面有必不可少 的控制信息)也㐀成了一定的<strong>开销</strong></p>
+<h3 id="分组交换和电路交换的时延特性"><a href="#分组交换和电路交换的时延特性" class="headerlink" title="分组交换和电路交换的时延特性"></a>分组交换和电路交换的时延特性</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204939467.png" alt="image-20230224204939467" style="zoom:67%;">
+
+<p>电路交换时延与数据长度有关</p>
+<p>分组交换时延：转发时延（路由器）+传输时延</p>
+<h2 id="计算机网络的类型"><a href="#计算机网络的类型" class="headerlink" title="计算机网络的类型"></a>计算机网络的类型</h2><h3 id="WAN（Wide-Area-Network）-也称为远程网"><a href="#WAN（Wide-Area-Network）-也称为远程网" class="headerlink" title="WAN（Wide Area Network）,也称为远程网"></a>WAN（Wide Area Network）,也称为远程网</h3><p>通信子网主要使用分组交换技术</p>
+<h3 id="城域网（Metropolitan-Area-Network-MAN"><a href="#城域网（Metropolitan-Area-Network-MAN" class="headerlink" title="城域网（Metropolitan Area Network, MAN)"></a>城域网（Metropolitan Area Network, MAN)</h3><h3 id="局域网-Local-Area-Network，LAN"><a href="#局域网-Local-Area-Network，LAN" class="headerlink" title="局域网(Local Area Network，LAN)"></a>局域网(Local Area Network，LAN)</h3><p>不存在路由选择问题</p>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105042449.png" alt="image-20230304105042449" style="zoom: 50%;">
+
+<h3 id="局域网和广域网（WAN和LAN）"><a href="#局域网和广域网（WAN和LAN）" class="headerlink" title="局域网和广域网（WAN和LAN）"></a>局域网和广域网（WAN和LAN）</h3><p><strong>局域网和广域网的侧重点不同：</strong><br>LAN：<strong>共享信道，冲突算法</strong><br>解决网络中随时可能产生的冲突，减少冲突，<br>减少错误<br>WAN：网状拓扑，<strong>路由算法</strong><br>找出一条最佳的路径，从而加快转发㏿度，<br>减少错误</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105216611.png" alt="image-20230304105216611" style="zoom:50%;">
+
+<h3 id="ISP和骨干网"><a href="#ISP和骨干网" class="headerlink" title="ISP和骨干网"></a>ISP和骨干网</h3><p>ISP：网络服务提供商 Internet Service Provider</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105314605.png" alt="image-20230304105314605" style="zoom:50%;">
+
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105323081.png" alt="image-20230304105323081" style="zoom:50%;">
+
+<p>把城市之间连接起来的网就叫<strong>骨干网</strong><br><strong>直接和国外连接（即有国际出口）</strong><br>其他有接入功能的ISP通过骨干网连到国外<br>“骨干网”通常是用于描述大型网络结构时经常使用的词语，描述网络结构，而非具体使用的传输方式或协议<br>骨干网一般都是广域网:作用范围几十到几千<br>公里</p>
+<h2 id="衡量网络性能的指标"><a href="#衡量网络性能的指标" class="headerlink" title="衡量网络性能的指标"></a>衡量网络性能的指标</h2><h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4><p>比特(bit，位)是计算机中数据量的单位，也是信息论中使用的信息量的单位。</p>
+<p>速率即<strong>数据率</strong>(data rate)或比特率(bit rate)是连接在计算机网络上的主机<strong>在数字信道上传输数据的速率</strong>，是一个最重要的性能指标。速率的单位是 bps，kbps，Mbps，Gbps 等</p>
+<p>速率往往是指额定速率或标称速率</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105529979.png" alt="image-20230304105529979" style="zoom:67%;">
+
+<h4 id="带宽与位宽度"><a href="#带宽与位宽度" class="headerlink" title="带宽与位宽度"></a>带宽与位宽度</h4><p>数字信号流随时间的变化：在时间轴上信 号的宽度随带宽的增大而变窄（位时间）</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105604239.png" alt="image-20230304105604239" style="zoom:67%;">
+
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><h4 id="发送时延"><a href="#发送时延" class="headerlink" title="发送时延"></a>发送时延</h4><p>发送数据时，数据块从节点进入到传输媒体所需要的时间。 </p>
+<p>从发送数据块的第一个比特算起，到该数据块的最后一个比特发送完毕所需的时间。<br><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.172ex;" xmlns="http://www.w3.org/2000/svg" width="30.329ex" height="5.475ex" role="img" focusable="false" viewbox="0 -1460 13405.6 2420"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">发</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">送</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(4277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mfrac" transform="translate(5333.6,0)"><g data-mml-node="mrow" transform="translate(220,710)"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">据</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">块</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">长</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">度</text></g><g data-mml-node="mtext" transform="translate(5000,0)"><path data-c="A0" d=""/></g><g data-mml-node="mo" transform="translate(5250,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(5639,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/></g><g data-mml-node="mi" transform="translate(6068,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(6413,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mi" transform="translate(6774,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mo" transform="translate(7243,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g><g data-mml-node="mrow" transform="translate(235.5,-710)"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">信</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">道</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">带</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">宽</text></g><g data-mml-node="mtext" transform="translate(4000,0)"><path data-c="A0" d=""/></g><g data-mml-node="mo" transform="translate(4250,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(4639,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/></g><g data-mml-node="mi" transform="translate(5068,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(5413,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mi" transform="translate(5774,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6243,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"/></g></g><g data-mml-node="mi" transform="translate(6743,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mo" transform="translate(7212,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g><rect width="7832" height="60" x="120" y="220"/></g></g></g></svg></mjx-container></p>
+<h4 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h4><p>电磁波在信道中需要传播一定的距离而花费的时间。 </p>
+<p>信号传输速率（即发送速率）和信号在信道上的传播速率是完全不同的概念<br><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.172ex;" xmlns="http://www.w3.org/2000/svg" width="44.454ex" height="5.475ex" role="img" focusable="false" viewbox="0 -1460 19648.6 2420"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">传</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">播</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(4277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mfrac" transform="translate(5333.6,0)"><g data-mml-node="mrow" transform="translate(4204.5,710)"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">信</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">道</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">长</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">度</text></g><g data-mml-node="mtext" transform="translate(4000,0)"><path data-c="A0" d=""/></g><g data-mml-node="mo" transform="translate(4250,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(4639,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(5517,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g><g data-mml-node="mrow" transform="translate(220,-710)"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">信</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">号</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">在</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">信</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">道</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">上</text></g><g data-mml-node="mi" transform="translate(6000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(7000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">传</text></g><g data-mml-node="mi" transform="translate(8000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">播</text></g><g data-mml-node="mi" transform="translate(9000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">速</text></g><g data-mml-node="mi" transform="translate(10000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">率</text></g><g data-mml-node="mtext" transform="translate(11000,0)"><path data-c="A0" d=""/></g><g data-mml-node="mo" transform="translate(11250,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(11639,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(12517,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"/></g></g><g data-mml-node="mi" transform="translate(13017,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mo" transform="translate(13486,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g><rect width="14075" height="60" x="120" y="220"/></g></g></g></svg></mjx-container></p>
+<h4 id="处理时延"><a href="#处理时延" class="headerlink" title="处理时延"></a>处理时延</h4><p>交换结点为存储转发而进行一些 必要的处理所花费的时间</p>
+<h4 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h4><p>结点缓存队列中分组排队所经历的时延 </p>
+<p><strong>排队时延的长短往往取决于网络中当时的通信量</strong></p>
+<h4 id="数据经历的总时延"><a href="#数据经历的总时延" class="headerlink" title="数据经历的总时延"></a>数据经历的总时延</h4><p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="54.301ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 24000.9 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">总</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(3277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(4333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">发</text></g><g data-mml-node="mi" transform="translate(5333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">送</text></g><g data-mml-node="mi" transform="translate(6333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(7333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(8555.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(9556,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">传</text></g><g data-mml-node="mi" transform="translate(10556,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">播</text></g><g data-mml-node="mi" transform="translate(11556,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(12556,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(13778.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(14778.4,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">处</text></g><g data-mml-node="mi" transform="translate(15778.4,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">理</text></g><g data-mml-node="mi" transform="translate(16778.4,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(17778.4,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g><g data-mml-node="mo" transform="translate(19000.7,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(20000.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">排</text></g><g data-mml-node="mi" transform="translate(21000.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">队</text></g><g data-mml-node="mi" transform="translate(22000.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">时</text></g><g data-mml-node="mi" transform="translate(23000.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">延</text></g></g></g></svg></mjx-container></p>
+<h4 id="时延的产生"><a href="#时延的产生" class="headerlink" title="时延的产生"></a>时延的产生</h4><p>从结点 A 向结点 B 发送数据，四种时延所产生 的位置</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110530843.png" alt="image-20230304110530843" style="zoom:67%;">
+
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>吞吐量：每秒能够成功传输的数据量(瞬时、 平均) </p>
+<p>吞吐量与带宽的区分：两者的单位都是bps. </p>
+<p>英文：吞吐量:throughput 带宽: bandwidth </p>
+<p>通信链路的带宽一般是指链路上每秒所能传送 的比特数，以太网的带宽是10Mbps</p>
+<p>区分链路上的可用带宽与实际链路中每秒所能 传送的比特数（吞吐量），用“吞吐量”来表示 一个系统的测试性能 </p>
+<p>因为实现受各种低效率因素的影响，由一段带 宽为10Mbps的链路连接的一对节点可能只达到 2Mbps的吞吐量。 </p>
+<p>这样就意味着，一个主机上的应用能够以 2Mbps的速度向另外的一个主机发送数据。</p>
+<p>每个连接的端到端吞吐量： min(Rc, Rs,  R/10) </p>
+<p>实际上 Rc 或 Rs 也可 能是瓶颈</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110729549.png" alt="image-20230304110729549" style="zoom:50%;">
+
+<h3 id="因特网钟主机的通信过程"><a href="#因特网钟主机的通信过程" class="headerlink" title="因特网钟主机的通信过程"></a>因特网钟主机的通信过程</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110810533.png" alt="image-20230304110810533" style="zoom:67%;">
+
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110820782.png" alt="image-20230304110820782" style="zoom:67%;">
+
+<h2 id="协议和层次体系结构"><a href="#协议和层次体系结构" class="headerlink" title="协议和层次体系结构"></a>协议和层次体系结构</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>协议是通信实体（如网络应用程序）之 间通信所必须遵守的<strong>规则</strong></p>
+<p>协议定义了在两个或多个通信实体之间 交换的<strong>报文格式和次序</strong>，以及在报文 传输和/或接收或其他事件方面所采取的 <strong>动作</strong></p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304110925863.png" alt="image-20230304110925863" style="zoom:67%;">
+
+<h3 id="协议的组成"><a href="#协议的组成" class="headerlink" title="协议的组成"></a>协议的组成</h3><p>语法：数据与控制信息的结构或格式 </p>
+<p>语义：需要发出何种控制信息，完成何种动作以及做出何种响应 </p>
+<p>同步：事件实现顺序的详细说明</p>
+<h3 id="分层体系结构"><a href="#分层体系结构" class="headerlink" title="分层体系结构"></a>分层体系结构</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>实体、协议、服务和服务访问点<br>        实体(Entity) 表示任何可发送或接收信息的硬件或软件进程。<br>        协议是控制两个对等实体（Peer Entity）进行通信的规则的集合。<br>        在协议的控制下，两个对等实体间的通信使得本层能够向上一层提供服务。<br>        要实现本层协议，还需要使用下层所提供的服务。</p>
+<h4 id="协议和服务"><a href="#协议和服务" class="headerlink" title="协议和服务"></a>协议和服务</h4><p>本层服务的实体只能看见服务而无法看见下 面的协议。 </p>
+<p>下面的协议对上面的服务用户是<strong>透明的</strong>。 </p>
+<p>协议是“<strong>水平的</strong>” ，即协议是控制对等实体之 间通信的规则。 </p>
+<p>服务是“<strong>垂直的</strong>” ，即服务是由下层向上层通 过层间接口提供的。 </p>
+<p>同一系统相邻两层的实体进行交互的地方， 称为<strong>服务访问点 SAP</strong> (Service Access Point)。</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111236496.png" alt="image-20230304111236496" style="zoom:67%;">
+
+<h3 id="TCP-x2F-IP协议栈"><a href="#TCP-x2F-IP协议栈" class="headerlink" title="TCP/IP协议栈"></a>TCP/IP协议栈</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111332296.png" alt="image-20230304111332296" style="zoom:67%;">
+
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111407318.png" alt="image-20230304111407318" style="zoom: 67%;">
+
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>发送的数据向下 接收的数据向上</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111453990.png" alt="image-20230304111453990" style="zoom:67%;">
+
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111510843.png" alt="image-20230304111510843" style="zoom:67%;">
+
+<p>示例： 我要访问北邮的主页，通信过程是怎样的？</p>
+<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304111527369.png" alt="image-20230304111527369" style="zoom: 67%;">
+
+<h4 id="分层体系结构的要点"><a href="#分层体系结构的要点" class="headerlink" title="分层体系结构的要点"></a>分层体系结构的要点</h4><ol>
+<li>网络体系结构<strong>分几层</strong>？每层的<strong>功能</strong>是什么？ 有哪些协议？ </li>
+<li>不同系统的<strong>对等层实体</strong>遵守<strong>协议</strong>进行通信 </li>
+<li>协议的实现需要下层的<strong>服务</strong> </li>
+<li>只有最底层是实际通信，其他各层都是虚拟通信，数据流向：U型 </li>
+<li>除最底层之外，每层对于上层的数据进行<strong>封装</strong>（打包：增加包头/尾，包头/尾的格式和内容由协议规定）</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
