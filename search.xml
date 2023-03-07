@@ -169,7 +169,7 @@
 <p><strong>容易为人所理解</strong></p>
 <p><strong>便于在计算机上 实现</strong></p>
 <h3 id="两大类数据模型"><a href="#两大类数据模型" class="headerlink" title="两大类数据模型"></a>两大类数据模型</h3><p>(1) <strong>概念模型</strong>   也称信息模型，它是按用户的观点来对数据和信息建模，用于数据库设计。<br>(2) <strong>逻辑模型和物理模型</strong>   按计算机系统的观点对数据建模，用于DBMS的实现。<br>        逻辑模型主要包括网状模型、层次模型、关系模型、面向对象模型等，按计算机系统的观点对数据建模，用于DBMS实现。<br>        物理模型是对数据最底层的抽象，描述数据在系统内部的表示方式和存取方法，在磁盘或磁带上的存储方式和存取方法。</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228192613246.png" alt="image-20230228192613246" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228192613246-16781980135701.png" alt="image-20230228192613246" style="zoom:50%;">
 
 <h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><p><strong>概念模型的用途</strong><br>概念模型用于信息世界的建模<br>是现实世界到机器世界的一个中间层次<br>是数据库设计的有力工具<br>数据库设计人员和用户之间进行交流的语言<br><strong>对概念模型的基本要求</strong><br>较强的语义表达能力<br>能够方便、直接地表达应用中的各种语义知识<br>简单、清晰、易于用户理解</p>
 <h3 id="信息世界中的基本概念"><a href="#信息世界中的基本概念" class="headerlink" title="信息世界中的基本概念"></a>信息世界中的基本概念</h3><p><strong>(1) 实体（Entity）</strong></p>
@@ -215,42 +215,42 @@
 <p><strong>(7) 联系（Relationship）</strong>  </p>
 <p>现实世界：事物内部以及事物之间的联系<br>信息世界：实体内部的联系和实体之间的联系</p>
 <h3 id="两个实体型之间的联系"><a href="#两个实体型之间的联系" class="headerlink" title="两个实体型之间的联系"></a>两个实体型之间的联系</h3><h4 id="一对一联系（1-1）"><a href="#一对一联系（1-1）" class="headerlink" title="一对一联系（1 : 1）"></a>一对一联系（1 : 1）</h4><p><strong>实例</strong><br>一个班级只有一个正班长，一个班长只在一个班中任职<br><strong>定义：</strong><br>    如果对于实体集A中的每一个实体，实体集B中至多有一个（也可以没有）实体与之联系，反之亦然，<strong>则称实体集A与实体集B具有一对一联系，记为1:1</strong> </p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193153537.png" alt="image-20230228193153537" style="zoom:33%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193153537-16781980135712.png" alt="image-20230228193153537" style="zoom:33%;">
 
 <h4 id="一对多联系（1-n）"><a href="#一对多联系（1-n）" class="headerlink" title="一对多联系（1 : n）"></a>一对多联系（1 : n）</h4><p><strong>实例</strong><br>一个班级中有若干名学生，每个学生只在一个班级中学习<br><strong>定义：</strong><br>如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中至多只有一个实体与之联系，则称<strong>实体集A与实体集B</strong>有一对多联系，记为1:n</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193321227.png" alt="image-20230228193321227" style="zoom:33%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193321227-16781980135713.png" alt="image-20230228193321227" style="zoom:33%;">
 
 <p>注意一对多联系图中<strong>1</strong>的位置</p>
 <h4 id="多对多联系（m-n）"><a href="#多对多联系（m-n）" class="headerlink" title="多对多联系（m : n）"></a>多对多联系（m : n）</h4><p><strong>实例</strong><br>课程与学生之间的联系：<br>一门课程同时有若干个学生选修<br>一个学生可以同时选修多门课程<br><strong>定义：</strong><br>如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中也有m个实体（m≥0）与之联系，则称实体集A与实体B具有多对多联系，记为m:n</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193313680.png" alt="image-20230228193313680" style="zoom:33%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193313680-16781980135714.png" alt="image-20230228193313680" style="zoom:33%;">
 
-<h4 id="用图形来表示两个实体型之间的三类联系"><a href="#用图形来表示两个实体型之间的三类联系" class="headerlink" title="用图形来表示两个实体型之间的三类联系"></a>用图形来表示两个实体型之间的三类联系</h4><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193406567.png" alt="image-20230228193406567" style="zoom:50%;">
+<h4 id="用图形来表示两个实体型之间的三类联系"><a href="#用图形来表示两个实体型之间的三类联系" class="headerlink" title="用图形来表示两个实体型之间的三类联系"></a>用图形来表示两个实体型之间的三类联系</h4><img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193406567-16781980135715.png" alt="image-20230228193406567" style="zoom:50%;">
 
 <h3 id="两个以上实体型之间的联系"><a href="#两个以上实体型之间的联系" class="headerlink" title="两个以上实体型之间的联系"></a>两个以上实体型之间的联系</h3><p>若实体型E1，E2，…，En存在联系，对于实体型Ej（j&#x3D;1，2，…，i-1，i+1，…，n）中的给定实体，最多只和Ei中的一个实体相联系，则我们说Ei与E1，E2，…，Ei-1，Ei+1，…，En之间的联系是<strong>一对多</strong>的</p>
 <p><strong>实例</strong></p>
 <p>课程、教师与参考书三个实体型</p>
 <p>每一个教师可以讲授若干门课程，每门课程可以使用若干本参考书</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193534803.png" alt="image-20230228193534803" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193534803-16781980135716.png" alt="image-20230228193534803" style="zoom:50%;">
 
 <p><strong>两个以上实体型间的一对一联系</strong></p>
 <p><strong>两个以上实体型间的多对多联系</strong></p>
 <h3 id="单个实体型内的联系"><a href="#单个实体型内的联系" class="headerlink" title="单个实体型内的联系"></a>单个实体型内的联系</h3><p>同一实体集内的各实体之间的关系<br><strong>一对多联系</strong><br><strong>实例</strong><br>职工实体型内部具有领导与被领导的联系<br>某一职工（干部）“领导”若干名职工<br>一个职工仅被另外一个职工直接领导<br>这是一对多的联系</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193653846.png" alt="image-20230228193653846" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193653846-16781980135717.png" alt="image-20230228193653846" style="zoom:50%;">
 
 <p><strong>一对一联系和多对多联系</strong></p>
 <h3 id="概念模型的一种表示方法"><a href="#概念模型的一种表示方法" class="headerlink" title="概念模型的一种表示方法"></a>概念模型的一种表示方法</h3><p><strong>实体－联系方法(E-R方法)</strong></p>
 <h4 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h4><p><strong>实体型</strong><br>用矩形表示，矩形框内写明实体名。</p>
 <p><strong>属性</strong><br>用椭圆形表示，并用无向边将其与相应的实体连接起来</p>
 <p><strong>联系</strong><br>联系本身：<br>   用菱形表示，菱形框内写明联系名，并用无向边分别与有关实体连接起来，同时在无向边旁标上联系的类型（1:1、1:n或m:n）</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193805948.png" alt="image-20230228193805948" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193805948-16781980135718.png" alt="image-20230228193805948" style="zoom:50%;">
 
-<h4 id="联系的表示方法"><a href="#联系的表示方法" class="headerlink" title="联系的表示方法"></a>联系的表示方法</h4><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193826047.png" alt="image-20230228193826047" style="zoom:50%;">
+<h4 id="联系的表示方法"><a href="#联系的表示方法" class="headerlink" title="联系的表示方法"></a>联系的表示方法</h4><img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193826047-16781980135719.png" alt="image-20230228193826047" style="zoom:50%;">
 
 <h4 id="联系的属性"><a href="#联系的属性" class="headerlink" title="联系的属性"></a>联系的属性</h4><p>联系本身也是一种实体型，也   可以有属性。如果一个联系具有属性，则这些属性也要用无向边与该联系连接起来 </p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228193848342.png" alt="image-20230228193848342" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228193848342-167819801357110.png" alt="image-20230228193848342" style="zoom:50%;">
 
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>用E-R图表示某个工厂物资管理的概念模型<br>实体：<br>        仓库： 仓库号、面积、电话号码<br>        零件 ：零件号、名称、规格、单价、描述<br>        供应商：供应商号、姓名、地址、电话号码、帐号<br>        项目：项目号、预算、开工日期<br>        职工：职工号、姓名、年龄、职称<br>实体之间的联系如下：<br>        一个仓库可以存放多种零件，一种零件可以存放在多个仓库中。用库存量来表示某种零件在某个仓库中的数量<br>        一个仓库有多个职工当仓库保管员，一个职工只能在一个仓库工作<br>        职工之间具有领导-被领导关系。即仓库主任领导若干保管员</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194000378.png" alt="image-20230228194000378" style="zoom: 67%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228194000378-167819801357111.png" alt="image-20230228194000378" style="zoom:67%;">
 
 <h3 id="数据模型的组成要素"><a href="#数据模型的组成要素" class="headerlink" title="数据模型的组成要素"></a>数据模型的组成要素</h3><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><p><strong>描述数据库的组成对象，以及对象之间的联系</strong></p>
 <p><strong>描述的内容</strong><br>与数据类型、内容、性质有关的对象<br>与数据之间联系有关的对象</p>
@@ -271,25 +271,25 @@
 <p>1.有且只有一个结点没有双亲结点，这个结点称为根结点</p>
 <p>2.根以外的其它结点有且只有一个双亲结点</p>
 <h5 id="层次模型中的几个术语"><a href="#层次模型中的几个术语" class="headerlink" title="层次模型中的几个术语"></a><strong>层次模型中的几个术语</strong></h5><p>根结点，双亲结点，兄弟结点，叶结点</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194651033.png" alt="image-20230228194651033" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228194651033-167819801357112.png" alt="image-20230228194651033" style="zoom:50%;">
 
 <h5 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a><strong>表示方法</strong></h5><p><strong>实体型：</strong>用记录类型描述，每个结点表示一个记录类型（实体）</p>
 <p><strong>属性：</strong>用字段描述，每个记录类型可包含若干个字段</p>
 <p><strong>联系：</strong>用结点之间的连线表示记录类型（实体）之间的<strong>一对多</strong>的父子联系</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194729758.png" alt="image-20230228194729758" style="zoom: 50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228194729758-167819801357113.png" alt="image-20230228194729758" style="zoom: 50%;">
 
 <h5 id="层次模型的数据操纵"><a href="#层次模型的数据操纵" class="headerlink" title="层次模型的数据操纵"></a><strong>层次模型的数据操纵</strong></h5><p>查询 插入 删除 更新</p>
 <h5 id="层次模型的完整性约束条件"><a href="#层次模型的完整性约束条件" class="headerlink" title="层次模型的完整性约束条件"></a><strong>层次模型的完整性约束条件</strong></h5><p>无相应的双亲结点值就不能插入子女结点值<br>如果删除双亲结点值，则相应的子女结点值也被同时删除</p>
 <h5 id="层次数据模型的存储结构"><a href="#层次数据模型的存储结构" class="headerlink" title="层次数据模型的存储结构"></a><strong>层次数据模型的存储结构</strong></h5><p><strong>邻接法</strong><br>按照层次树前序遍历的顺序把所有记录值依次邻接存放，即通过物理空间的位置相邻来实现层次顺序</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228194950487.png" alt="image-20230228194950487" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228194950487-167819801357115.png" alt="image-20230228194950487" style="zoom:50%;">
 
 <p><strong>链接法</strong><br>用指引来反映数据之间的层次联系<br>子女－兄弟链接法<br>层次序列链接法</p>
 <p><strong>子女-兄弟链接法</strong><br>每个记录设两类指针，分别指向最左边的子女（每个记录型对应一个）和最近的兄弟</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195024242.png" alt="image-20230228195024242" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228195024242-167819801357114.png" alt="image-20230228195024242" style="zoom:50%;">
 
 <p><strong>层次序列链接法</strong></p>
 <p>按树的前序穿越顺序链接各记录值</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195039461.png" alt="image-20230228195039461" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228195039461-167819801357116.png" alt="image-20230228195039461" style="zoom:50%;">
 
 <h5 id="层次模型的优缺点"><a href="#层次模型的优缺点" class="headerlink" title="层次模型的优缺点"></a><strong>层次模型的优缺点</strong></h5><p><strong>优点</strong><br>层次模型的数据结构比较简单清晰<br>查询效率高，性能优于关系模型，不低于网状模型<br>层次数据模型提供了良好的完整性支持</p>
 <p><strong>缺点</strong><br>多对多联系表示不自然<br>对插入和删除操作的限制多，应用程序的编写比较复杂<br>查询子女结点必须通过双亲结点</p>
@@ -300,7 +300,7 @@
 </ol>
 <h5 id="多对多联系在网状模型中的表示"><a href="#多对多联系在网状模型中的表示" class="headerlink" title="多对多联系在网状模型中的表示"></a><strong>多对多联系在网状模型中的表示</strong></h5><p>​		用网状模型间接表示多对多联系<br>​		方法：将多对多联系直接分解成一对多联系</p>
 <h5 id="数据操作-1"><a href="#数据操作-1" class="headerlink" title="数据操作"></a><strong>数据操作</strong></h5><p>网状数据库系统（如DBTG）对数据操纵加了一些限制，提供了一定的完整性约束<br>码：唯一标识记录的数据项的集合<br>支持双亲记录和子女记录之间某些约束条件<br>    有些子女记录要求双亲记录存在才能插入，双亲记录删除时也连同删除。例如学生选课记录</p>
-<h5 id="网状数据模型的存储结构"><a href="#网状数据模型的存储结构" class="headerlink" title="网状数据模型的存储结构"></a>网状数据模型的存储结构</h5><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195613303.png" alt="image-20230228195613303" style="zoom:50%;">
+<h5 id="网状数据模型的存储结构"><a href="#网状数据模型的存储结构" class="headerlink" title="网状数据模型的存储结构"></a>网状数据模型的存储结构</h5><img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228195613303-167819801357117.png" alt="image-20230228195613303" style="zoom:50%;">
 
 <h5 id="网状数据模型的优缺点"><a href="#网状数据模型的优缺点" class="headerlink" title="网状数据模型的优缺点"></a>网状数据模型的优缺点</h5><p><strong>优点</strong><br>能更为直接地描述现实世界，如一个结点可以有多个双亲</p>
 <p>具有良好的性能，存取效率较高</p>
@@ -308,21 +308,50 @@
 <p>DDL、DML语言复杂，用户不容易使用</p>
 <p>记录类型联系变动后涉及链接指针的调整，扩充和维护都比较复杂 </p>
 <h4 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h4><p>在用户观点下，关系模型中数据的逻辑结构是一张二维表，它由行和列组成。</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195759196.png" alt="image-20230228195759196" style="zoom: 50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228195759196-167819801357118.png" alt="image-20230228195759196" style="zoom: 50%;">
 
 <p><strong>关系（Relation）</strong><br>一个关系对应通常说的一张表<br><strong>元组（Tuple）</strong><br>表中的一行即为一个元组<br><strong>属性（Attribute）</strong><br>表中的一列即为一个属性，给每一个属性起一个名称即属性名</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228195837826.png" alt="image-20230228195837826" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228195837826-167819801357119.png" alt="image-20230228195837826" style="zoom:50%;">
 
 <p><strong>主码（Key）</strong><br>表中的某个属性组，它可以唯一确定一个元组。<br><strong>域（Domain）</strong><br>属性的取值范围。<br><strong>分量</strong><br>元组中的一个属性值。<br><strong>关系模式</strong><br>对关系的描述<br>关系名（属性1，属性2，…，属性n）<br>学生（学号，姓名，年龄，性别，系，年级）</p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228200117047.png" alt="image-20230228200117047" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228200117047-167819801357220.png" alt="image-20230228200117047" style="zoom:50%;">
 
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230228200133118.png" alt="image-20230228200133118" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230228200133118-167819801357221.png" alt="image-20230228200133118" style="zoom:50%;">
 
 <h5 id="数据操作是集合操作，操作对象和结果都是关系"><a href="#数据操作是集合操作，操作对象和结果都是关系" class="headerlink" title="数据操作是集合操作，操作对象和结果都是关系"></a>数据操作是集合操作，操作对象和结果都是关系</h5><p>查询 插入 删除 更新</p>
 <h5 id="完整性约束条件-1"><a href="#完整性约束条件-1" class="headerlink" title="完整性约束条件"></a>完整性约束条件</h5><p>实体完整性<br>参照完整性<br>用户定义的完整性</p>
 <h5 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h5><p>实体及实体间的联系都用表来表示<br>表以文件形式存储<br>有的DBMS一个表对应一个操作系统文件<br>有的DBMS自己设计文件结构</p>
 <h5 id="关系数据模型的优缺点"><a href="#关系数据模型的优缺点" class="headerlink" title="关系数据模型的优缺点"></a>关系数据模型的优缺点</h5><p><strong>优点</strong><br>建立在严格的数学概念的基础上<br>可以描述一对一、一对多和多对多的联系<br>概念单一<br>        实体和各类联系都用关系来表示<br>        对数据的检索结果也是关系<br>存取路径对用户透明<br>        用户只要指出“干什么”，不必详细说明“怎么干”<br>        具有更高的数据独立性，更好的安全保密性<br>        简化了程序员的工作和数据库开发建立的工作</p>
 <p><strong>缺点</strong><br>存取路径对用户透明导致查询效率往往不如非关系数据模型<br>为提高性能，必须对用户的查询请求进行优化增加了开发DBMS的难度</p>
+<h4 id="关系模式-gt-ER图"><a href="#关系模式-gt-ER图" class="headerlink" title="关系模式-&gt;ER图"></a>关系模式-&gt;ER图</h4><p>例：<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307214952179.png" alt="image-20230307214952179" style="zoom:67%;"></p>
+<h3 id="E-R模型补充扩展"><a href="#E-R模型补充扩展" class="headerlink" title="E-R模型补充扩展"></a>E-R模型补充扩展</h3><p><strong>Movie database</strong><br><strong>Movie</strong>: title, year, length, genre<br><strong>Stars</strong>: name, address<br><strong>Studios</strong>: name, address</p>
+<p>a studio contracts with a particular start to act in a particular movie for some salary</p>
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215104726.png" alt="image-20230307215104726" style="zoom:50%;">
+
+<h4 id="多实体集联系-多角色实体集"><a href="#多实体集联系-多角色实体集" class="headerlink" title="多实体集联系+多角色实体集"></a>多实体集联系+多角色实体集</h4><p>怎样表示Studio 2从studio 1租借某演员签约出演某电影？</p>
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215135547.png" alt="image-20230307215135547" style="zoom:50%;">
+
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215534821.png" alt="image-20230307215534821" style="zoom: 33%;">
+
+<p>怎样去掉联系Contracts的属性salary？</p>
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215600082.png" alt="image-20230307215600082" style="zoom:50%;">
+
+<h4 id="“Is-a”联系"><a href="#“Is-a”联系" class="headerlink" title="“Is a”联系"></a>“Is a”联系</h4><p>怎样表示电影的两个子类“动画片”和“枪战片”</p>
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215658701.png" alt="image-20230307215658701" style="zoom: 33%;">
+
+<h2 id="1-3-数据库系统结构"><a href="#1-3-数据库系统结构" class="headerlink" title="1.3 数据库系统结构"></a>1.3 数据库系统结构</h2><h4 id="分布式B-x2F-S结构数据库系统"><a href="#分布式B-x2F-S结构数据库系统" class="headerlink" title="分布式B&#x2F;S结构数据库系统"></a>分布式B&#x2F;S结构数据库系统</h4><img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307215809913.png" alt="image-20230307215809913" style="zoom:50%;">
+
+<h3 id="数据库系统模式的概念"><a href="#数据库系统模式的概念" class="headerlink" title="数据库系统模式的概念"></a>数据库系统模式的概念</h3><h4 id="“型”-和“值”-的概念"><a href="#“型”-和“值”-的概念" class="headerlink" title="“型” 和“值” 的概念"></a>“型” 和“值” 的概念</h4><p><strong>型(Type)</strong>  对某一类数据的结构和属性的说明<br><strong>值(Value)</strong>  是型的一个具体赋值<br>例如<br>学生记录型：<br>  （学号，姓名，性别，系别，年龄，籍贯）<br>一个记录值：<br>  （900201，李明，男，计算机，22，江苏）</p>
+<p><strong>模式（Schema）</strong><br>数据库逻辑结构和特征的描述<br>是型的描述<br>反映的是数据的结构及其联系<br>模式是相对稳定的</p>
+<p><strong>实例（Instance）</strong><br>模式的一个具体值<br>反映数据库某一时刻的状态<br>同一个模式可以有很多实例<br>实例随数据库中的数据的更新而变动</p>
+<h3 id="数据库系统的三级模式结构"><a href="#数据库系统的三级模式结构" class="headerlink" title="数据库系统的三级模式结构"></a>数据库系统的三级模式结构</h3><img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307220505091.png" alt="image-20230307220505091" style="zoom: 50%;">
+
+<h4 id="模式（也称逻辑模式）"><a href="#模式（也称逻辑模式）" class="headerlink" title="模式（也称逻辑模式）"></a>模式（也称逻辑模式）</h4><p>​		数据库中全体数据的逻辑结构和特征的描述<br>​		所有用户的公共数据视图，综合了所有用户的需求<br><strong>一个数据库只有一个模式</strong><br><strong>模式的地位：是数据库系统模式结构的中间层</strong><br>​		与数据的物理存储细节和硬件环境无关<br>​		与具体的应用程序、开发工具及高级程序设计语言无关</p>
+<p><strong>模式的定义</strong><br>        数据的逻辑结构（数据项的名字、类型、取值范围等）<br>        数据之间的联系<br>        数据有关的安全性、完整性要求</p>
+<h4 id="外模式（也称子模式或用户模式）"><a href="#外模式（也称子模式或用户模式）" class="headerlink" title="外模式（也称子模式或用户模式）"></a>外模式（也称子模式或用户模式）</h4><p>数据库用户（包括应用程序员和最终用户）使用的局部数据的逻辑结构和特征的描述<br>数据库用户的数据视图，是与某一应用有关的数据的逻辑表示</p>
+<h4 id="内模式（也称存储模式）"><a href="#内模式（也称存储模式）" class="headerlink" title="内模式（也称存储模式）"></a>内模式（也称存储模式）</h4><p>是数据物理结构和存储方式的描述<br>是数据在数据库内部的表示方式</p>
+<p><strong>一个数据库只有一个内模式</strong></p>
+<img lazyload src="/images/loading.svg" data-src="G:/XMNSatayBlog/source/_posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20230307220519463.png" alt="image-20230307220519463" style="zoom:67%;">
 ]]></content>
       <tags>
         <tag>Note</tag>
