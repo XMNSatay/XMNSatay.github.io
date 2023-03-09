@@ -529,7 +529,7 @@
 <p>​	②查找转发表，找出到某个目的地址应从哪个 端口转发; </p>
 <p>​	③把分组送到适当的端口转发出去</p>
 <p><strong>==存储转发==</strong></p>
-<img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230224204642729.png" alt="image-20230224204642729" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230224204642729.png" class>
 
 <p>主机和路由器的作用不同 </p>
 <p>​	主机是为用户进行信息处理的，并向网络发送分组，从网络接收分组 </p>
@@ -548,7 +548,7 @@
 <p>分组交换时延：转发时延（路由器）+传输时延</p>
 <h2 id="计算机网络的类型"><a href="#计算机网络的类型" class="headerlink" title="计算机网络的类型"></a>计算机网络的类型</h2><h3 id="WAN（Wide-Area-Network）-也称为远程网"><a href="#WAN（Wide-Area-Network）-也称为远程网" class="headerlink" title="WAN（Wide Area Network）,也称为远程网"></a>WAN（Wide Area Network）,也称为远程网</h3><p>通信子网主要使用分组交换技术</p>
 <h3 id="城域网（Metropolitan-Area-Network-MAN"><a href="#城域网（Metropolitan-Area-Network-MAN" class="headerlink" title="城域网（Metropolitan Area Network, MAN)"></a>城域网（Metropolitan Area Network, MAN)</h3><h3 id="局域网-Local-Area-Network，LAN"><a href="#局域网-Local-Area-Network，LAN" class="headerlink" title="局域网(Local Area Network，LAN)"></a>局域网(Local Area Network，LAN)</h3><p>不存在路由选择问题</p>
-<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105042449.png" alt="image-20230304105042449" style="zoom: 50%;">
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230304105042449.png" class>
 
 <h3 id="局域网和广域网（WAN和LAN）"><a href="#局域网和广域网（WAN和LAN）" class="headerlink" title="局域网和广域网（WAN和LAN）"></a>局域网和广域网（WAN和LAN）</h3><p><strong>局域网和广域网的侧重点不同：</strong><br>LAN：<strong>共享信道，冲突算法</strong><br>解决网络中随时可能产生的冲突，减少冲突，<br>减少错误<br>WAN：网状拓扑，<strong>路由算法</strong><br>找出一条最佳的路径，从而加快转发㏿度，<br>减少错误</p>
 <img lazyload src="/images/loading.svg" data-src="C:\Users\15993\AppData\Roaming\Typora\typora-user-images\image-20230304105216611.png" alt="image-20230304105216611" style="zoom:50%;">
@@ -627,7 +627,33 @@
 <li>只有最底层是实际通信，其他各层都是虚拟通信，数据流向：U型 </li>
 <li>除最底层之外，每层对于上层的数据进行<strong>封装</strong>（打包：增加包头/尾，包头/尾的格式和内容由协议规定）</li>
 </ol>
-]]></content>
+<h1 id="2-应用层"><a href="#2-应用层" class="headerlink" title="2 应用层"></a>2 应用层</h1><h2 id="网络应用概述"><a href="#网络应用概述" class="headerlink" title="网络应用概述"></a>网络应用概述</h2><h3 id="提供网络应用"><a href="#提供网络应用" class="headerlink" title="提供网络应用"></a>提供网络应用</h3><h5 id="编写应用程序"><a href="#编写应用程序" class="headerlink" title="编写应用程序"></a>编写应用程序</h5><p>在不同的端系统上运行<br>通过网络和其他端系统通信<br>遵守特定的协议<br>示例：webserver软件和浏览器软件通信</p>
+<h5 id="无需修改网络核心软件"><a href="#无需修改网络核心软件" class="headerlink" title="无需修改网络核心软件"></a>无需修改网络核心软件</h5><p>网络核心设备不运行网络应用程序<br>方便实现快速的应用开发和部署</p>
+<h3 id="应用层协议的内容"><a href="#应用层协议的内容" class="headerlink" title="应用层协议的内容"></a>应用层协议的内容</h3><p><strong>消息类型</strong><br>        例如：请求、应答<br><strong>语法（Syntax）</strong><br>        消息中包含哪些字段，每个字段的长度<br><strong>语义 (Semantics)</strong><br>        每个字段信息的含义<br><strong>时序：消息的顺序</strong></p>
+<h3 id="应用层协议的特点"><a href="#应用层协议的特点" class="headerlink" title="应用层协议的特点"></a>应用层协议的特点</h3><p>面向用户，支持特定的网络应用 </p>
+<p>​		<strong>没有通用的协议，每个应用有专门的协议！</strong><br>​		<strong>相比其他层，协议数量最多、最复杂</strong></p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230309235623312.png" class title="image-20230309235623312">
+
+<h3 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h3><h4 id="C-x2F-S-体系结构"><a href="#C-x2F-S-体系结构" class="headerlink" title="C/S 体系结构"></a>C/S 体系结构</h4><p><strong>服务器:</strong><br>提供服务，同时处理多个客户请求<br>一直在线<br>地址(域名)公开，一般不变<br>可能有多个服务器(server farms)<br>一般需要高性能硬件支持</p>
+<p> <strong>客户:</strong><br>与服务器通信，使用服务<br>临时连接到网络<br>IP地址可能是动态的<br>客户之间不直接通信</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230309235830786.png" class title="image-20230309235830786">
+
+<h4 id="P2P体系结构"><a href="#P2P体系结构" class="headerlink" title="P2P体系结构"></a>P2P体系结构</h4><p>Peer -to-Peer<br>没有严格的服务器 - 客户机之分 ，Peer<br>没 有 一 直 在 线 的 服 务 器 ， Peer 在 必 要 时 充 当 服 务 器<br>Peer 之 间 直 接 通 信<br>Peer 临 时 连 接 到 网 络 ， 且IP 地 址 可 能 动 态 变 化  <strong>可扩 展 、 成本低 ， 但难 于 管 理 、 有 安 全 隐 患</strong></p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000105961.png" class title="image-20230310000105961">
+
+<h5 id="P2P文件下载：Peer之间互相传输文件"><a href="#P2P文件下载：Peer之间互相传输文件" class="headerlink" title="P2P文件下载：Peer之间互相传输文件"></a>P2P文件下载：Peer之间互相传输文件</h5><img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000128929.png" class title="image-20230310000128929">
+
+<h5 id="P2P-如何查找资源"><a href="#P2P-如何查找资源" class="headerlink" title="P2P: 如何查找资源"></a>P2P: 如何查找资源</h5><p><strong>集中式</strong>：从索引服务器(Index Server)中查找资源，eg. Napster<br><strong>分布式</strong>：洪泛查询(Query Flooding)，eg. Gnutella<br><strong>分层叠加网</strong>，超级节点提供索引服务，<br>eg.KaZaA, freenet,chord</p>
+<p>集中式查找：混合P2P</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000315006.png" class title="image-20230310000315006">
+
+<p>洪泛式（Flooding）查找</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000335907.png" class title="image-20230310000335907">
+
+<p>分层叠加网（Overlay Network）查找</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000348333.png" class title="image-20230310000348333">
+
+<h4 id="C-x2F-S和P2P混合结构"><a href="#C-x2F-S和P2P混合结构" class="headerlink" title="C/S和P2P混合结构"></a>C/S和P2P混合结构</h4>]]></content>
       <tags>
         <tag>Note</tag>
       </tags>
