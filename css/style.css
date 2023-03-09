@@ -155,7 +155,7 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -197,7 +197,7 @@
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -282,7 +282,7 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -364,7 +364,7 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -406,7 +406,7 @@
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -491,7 +491,7 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1038,7 +1038,7 @@ button {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1080,7 +1080,7 @@ button {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1165,7 +1165,7 @@ button {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1672,7 +1672,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1714,7 +1714,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1799,7 +1799,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -1995,7 +1995,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2037,7 +2037,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2122,7 +2122,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2384,7 +2384,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2426,7 +2426,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2511,7 +2511,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2929,7 +2929,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -2971,7 +2971,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3056,7 +3056,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3625,7 +3625,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3667,7 +3667,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3752,7 +3752,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3897,7 +3897,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -3939,7 +3939,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4024,7 +4024,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4369,7 +4369,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4411,7 +4411,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4496,7 +4496,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4755,7 +4755,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4797,7 +4797,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -4882,7 +4882,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5135,7 +5135,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5177,7 +5177,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5262,7 +5262,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5450,7 +5450,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5492,7 +5492,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5577,7 +5577,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5855,7 +5855,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5897,7 +5897,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -5982,7 +5982,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6540,7 +6540,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6582,7 +6582,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6667,7 +6667,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6803,7 +6803,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6845,7 +6845,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -6930,7 +6930,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -7111,7 +7111,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -7153,7 +7153,7 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --first-screen-text-color: #fff;
+    --first-screen-text-color: #06c;
     --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
     --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
     --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
@@ -7238,7 +7238,7 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --first-screen-text-color: #fff;
+  --first-screen-text-color: #06c;
   --first-screen-icons-container-border-color: rgba(255,255,255,0.35);
   --first-screen-icons-container-background-color: rgba(255,255,255,0.3);
   --redefine-box-shadow: var(--shadow-color-2) 0px 6px 24px 0px, var(--shadow-color-1) 0px 0px 0px 1px;
