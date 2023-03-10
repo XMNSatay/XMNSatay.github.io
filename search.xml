@@ -438,7 +438,38 @@
 <p>分层叠加网（Overlay Network）查找</p>
 <img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310000348333.png" class title="image-20230310000348333">
 
-<h4 id="C-x2F-S和P2P混合结构"><a href="#C-x2F-S和P2P混合结构" class="headerlink" title="C/S和P2P混合结构"></a>C/S和P2P混合结构</h4>]]></content>
+<h4 id="C-x2F-S和P2P混合结构"><a href="#C-x2F-S和P2P混合结构" class="headerlink" title="C/S和P2P混合结构"></a>C/S和P2P混合结构</h4><h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p>C/S模式的主机间进程通信</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100609409.png" class title="image-20230310100609409">
+
+<p>不同主机间通信的接口：Sockets</p>
+<p><strong>套接字</strong><br>应用进程使用socket来发送/接收消息<br>应用编程接口（API）<br>        位于应用层和传输层 之间<br>        帮助应用访问系统内核（TCP/IP协议软件）<br>        设置相关参数（如最大报文段长度MSS等）</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100650516.png" class title="image-20230310100650516">
+
+<p>Internet 上的每台主机都 有一个唯一的IP地址<br>Q: IP地址能唯一标识进程吗? A: 当然不行，一台主机中可能有多个进程在运行</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100749036.png" class title="image-20230310100749036">
+
+<h3 id="通信关系与端口号"><a href="#通信关系与端口号" class="headerlink" title="通信关系与端口号"></a>通信关系与端口号</h3><img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100814098.png" class title="image-20230310100814098">
+
+<p>IP地址与端口号示例</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100825046.png" class title="image-20230310100825046">
+
+<h3 id="网络应用对传输服务的要求：衡量指标"><a href="#网络应用对传输服务的要求：衡量指标" class="headerlink" title="网络应用对传输服务的要求：衡量指标"></a>网络应用对传输服务的要求：衡量指标</h3><h5 id="可靠性：数据丢失率"><a href="#可靠性：数据丢失率" class="headerlink" title="可靠性：数据丢失率"></a>可靠性：数据丢失率</h5><p>o 可容忍差错，如话音<br>o 不能容忍差错，如Email</p>
+<h5 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h5><p>o 端到端的时延</p>
+<h5 id="吞吐量-Throughput"><a href="#吞吐量-Throughput" class="headerlink" title="吞吐量 (Throughput)"></a>吞吐量 (Throughput)</h5><p>o 端到端的带宽<br>o 音频数据: 5kbps-1Mbps<br>o 视频数据:10kbps-5Mbps</p>
+<h5 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h5><p>o 是否加密、是否验证用户身份、能否保证数据一致性</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100908004.png" class title="image-20230310100908004">
+
+<h3 id="因特网的传输层服务"><a href="#因特网的传输层服务" class="headerlink" title="因特网的传输层服务"></a>因特网的传输层服务</h3><img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310100927025.png" class title="image-20230310100927025">
+
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310101006244.png" class title="image-20230310101006244">
+
+<p><strong>IP地址的优点和缺点</strong><br>        IP地址更适合计算机处理，包含足够的路由信息。<br>        IP地址不适合人们记忆<br>        无法通过IP地址猜测主机的用途<br>                如一个主机到底是www服务器还是FTP服务器？<br><strong>如何取长补短——域名系统</strong><br>    优点：<br>        使用方便，易于记忆。<br>         一致性好，不会随IP地址的改变而改变。<br>    采用分层结构的分布式数据库，ᨀ供主机名和IP地址映射的目录服务<br>    允许主机查询分布式DNS数据库的应用层协议</p>
+<h3 id="DNS协议要点"><a href="#DNS协议要点" class="headerlink" title="DNS协议要点"></a>DNS协议要点</h3><p>采用C/S模型，Client请求，Server响应<br>客户端程序：resolver(解析器)<br>传输层采用UDP<br>DNS服务器的访问端口号是53<br>DNS是其他应用层协议的支撑协议</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310101149685.png" class title="image-20230310101149685">
+
+<p>层次化的名字空间</p>
+<img lazyload src="/images/loading.svg" data-src="/2023/02/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20230310101211372.png" class title="image-20230310101211372">
+]]></content>
       <tags>
         <tag>Note</tag>
       </tags>
