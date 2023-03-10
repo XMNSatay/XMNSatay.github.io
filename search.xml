@@ -717,4 +717,37 @@
         <tag>Code</tag>
       </tags>
   </entry>
+  <entry>
+    <title>常用公式</title>
+    <url>/2023/03/10/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<ol>
+<li><p>二项式定理公式：<br>$$<br>(a+b)^n&#x3D;\sum_{k&#x3D;0}^{n}\binom{n}{k}a^{n-k}b^k<br>$$</p>
+</li>
+<li><p>正弦定理：<br>$$<br>\frac{a}{\sin A}&#x3D;\frac{b}{\sin B}&#x3D;\frac{c}{\sin C}&#x3D;2R<br>$$</p>
+</li>
+<li><p>余弦定理：<br>$$<br>c^2&#x3D;a^2+b^2-2ab\cos C<br>$$</p>
+</li>
+<li><p>对数公式：<br>$$<br>\log_ab&#x3D;\frac{\log_cb}{\log_ca}<br>$$</p>
+</li>
+<li><p>求和公式：<br>$$<br>\sum_{i&#x3D;1}^{n}i&#x3D;\frac{n(n+1)}{2}<br>$$</p>
+</li>
+<li><p>平均数公式：<br>$$<br>\overline{x}&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^{n}x_i<br>$$</p>
+</li>
+<li><p>标准差公式：<br>$$<br>s&#x3D;\sqrt{\frac{\sum_{i&#x3D;1}^{n}(x_i-\overline{x})^2}{n-1}}<br>$$</p>
+</li>
+<li><p>泊松分布公式：<br>$$<br>P(X&#x3D;k)&#x3D;\frac{e^{-\lambda}\lambda^k}{k!}<br>$$</p>
+</li>
+<li><p>正态分布公式：<br>$$<br>f(x)&#x3D;\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}<br>$$</p>
+</li>
+<li><p>中心极限定理公式：<br>$$</p>
+<ol>
+<li>Z_n&#x3D;\frac{\sum_{i&#x3D;1}^{n}X_i-n\mu}{\sigma\sqrt{n}}\xrightarrow{d}N(0,1)<br>$$</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Random</tag>
+      </tags>
+  </entry>
 </search>
