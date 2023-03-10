@@ -224,7 +224,7 @@
   display: block;
   opacity: 1;
   transition: opacity 0.2s ease-in 0.2s;
-  width: 350px;
+  width: 300px;
 }
 .post-page-container.show-toc .toc-content-container:hover::-webkit-scrollbar-thumb {
   border: 3px solid rgba(183,183,183,0.3);
