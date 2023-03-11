@@ -758,4 +758,367 @@
         <tag>Code</tag>
       </tags>
   </entry>
+  <entry>
+    <title>汇编语言</title>
+    <url>/2023/03/11/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="状态标志"><a href="#状态标志" class="headerlink" title="状态标志"></a>状态标志</h2><p>掌握6个与程序调试相关的状态标志 (位0，2，4，6，7，和11)</p>
+<p>*<em>CF (<strong><strong>位</strong></strong>0)</em>*</p>
+<p>进位标志位，一般情况下，在进行无符号数运算的时候，它记录了运算结果的最高有效位向更高位的进位值，或从更高位的借位值。</p>
+<p>在加法运算中，若运算结果从字或字节的最高位产生了进位，则CF=1；否则CF=0</p>
+<p>在减法运算中，若被减数无借位，则CF=0；否则CF=1</p>
+<p>*<em>OF (<strong><strong>位</strong></strong>11)</em>* <strong>指示运算结果的正负符号位是否存在逻辑异常</strong></p>
+<p>溢出标志位，一般情况下，OF记录了有符号数运算的结果是否发生了溢出。如负数-正数=正数，正数+正数=负数，正数x正数=负数等</p>
+<p>如果发生了溢出，OF=1；如果没有发生溢出，OF=0</p>
+<p>注：CF和OF所表示的进位和溢出，是分别针对无符号数和有符号数运算而言的，一定要分清楚CF和OF的发生条件</p>
+<p>AF(位4)</p>
+<p> 辅助进位标志位，在发生以下情况时，辅助进位标志AF的值被置为1，否则其值为0：</p>
+<p>在字操作时，发生低字节向高字节进位或借位时 </p>
+<p>在字节操作时，发生低4位向高4位进位或借位时</p>
+<p>PF(位2)</p>
+<p>奇偶标志位，记录相关指令执行后，其结果的最低有效字节中1的个数是否为偶数</p>
+<p>如果1的个数为偶数，PF=1；如果1的个数为奇数，PF=0</p>
+<p>SF(位7)</p>
+<p>符号标志位，记录相关指令执行后，其结果是否为负</p>
+<p>当操作数为有符号数时，若结果为负数，SF=1；若结果为非负数，SF=0</p>
+<p>ZF(位6)</p>
+<p> 零标志位，记录相关指令执行后，其结果是否为0；若运算结果为0，则其值为1，否则其值为0</p>
+<h2 id="指令指针寄存器"><a href="#指令指针寄存器" class="headerlink" title="指令指针寄存器"></a>指令指针寄存器</h2><p><strong>EIP<strong><strong>：Extended Instruction Pointer</strong></strong>，指令指针寄存器</strong></p>
+<p>在32位系统中：</p>
+<p>它的大小为32位，是由原来的16位IP寄存器扩展而来</p>
+<p>往往直接保存CPU下一条将要执行指令的地址</p>
+<p>程序运行时，CPU会读取EIP中一条指令的地址，将指令传送到指令缓冲区后，EIP的值自动增加</p>
+<p>CPU每次执行完一条指令，就会通过EIP寄存器读取并执行下一条指令</p>
+<p>不能直接修改EIP的值，只能通过其他指令间接修改</p>
+<p>这些特定指令包括JMP、JC、CALL、RET</p>
+<p>可以通过中断或异常来修改EIP的值</p>
+<h1 id="X86汇编指令集"><a href="#X86汇编指令集" class="headerlink" title="X86汇编指令集"></a>X86汇编指令集</h1><h2 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h2><p>数据传送指令可以将数据、地址或立即数传送到寄存器或存储单元中</p>
+<p>立即数是指直接出现在指令中的数值</p>
+<p>立即数的优点是它们可以使指令更加简洁和高效，因为无需使用额外的指令来加载数据</p>
+<p>不过由于受到指令长度的限制，无法表示非常大的数</p>
+<p>大部分这类指令不影响状态标志位，部分涉及标志寄存器FLAGS的指令（SAHF和POPF）例外</p>
+<h3 id="通用数据传送指令"><a href="#通用数据传送指令" class="headerlink" title="通用数据传送指令"></a>通用数据传送指令</h3><p>MOV：把源操作数（OPS）传送到目的操作数（OPD）</p>
+<p>MOVSX：带符号扩展传送</p>
+<p>MOVZX：带零扩展传送</p>
+<p>指令格式：MOV(MOVSX/MOVZX) DEST，SRC</p>
+<p>MOV AL, -15     # 将-15传入 AL中；其1Byte长的补码为 F1H</p>
+<p>MOV BL, AL      # 将 AL 中的数据传送到 BL 中</p>
+<p>MOVSX EBX, AL  # 将 F1H 扩展为 FFFFFFF1H 后送 EAX 中</p>
+<p>MOVZX AX, BL   # 将 F1H 扩展为 00F1H 后送 AX 中。</p>
+<h3 id="MOV传送指令"><a href="#MOV传送指令" class="headerlink" title="MOV传送指令"></a>MOV传送指令</h3><p><strong>操作数类型</strong></p>
+<p>OPS可以为：存储器、通用寄存器、段寄存器和立即数。</p>
+<p>OPD可以为：存储器、通用寄存器和段寄存器（CS除外）</p>
+<p>注意：</p>
+<p>立即数不能送段寄存器，其余可以任意搭配；因难以直接确定操作数的长度，立即数送存储器的指令需要在存储器操作数的前面加上类型说明，如BYTE PTR,WORD PTR 或DWORD PTR。</p>
+<p>例如：</p>
+<p>MOV BYTE PTR [ESI + 0x1000]，15 ；8位立即数 15 送偏移地址为 ESI+1000H 的字节单元；</p>
+<p>MOV WORD PTR [EDI + EBX]，2022 ；16位立即数 2022 送偏移地址为 EBX + EDI 的字单元</p>
+<p>注意：</p>
+<p>两存储单元之间不能直接进行数据传送；两个段寄存器之间不能直接进行传送信息。</p>
+<p>但可以用 CPU内部寄存器为中介桥梁来完成这样的传送</p>
+<p>例如：MOV AL，AREA1   例如： MOV  AX，0x2B</p>
+<p>​      MOV AREA2，AL    MOV  DS， AX</p>
+<p>立即数、代码段寄存器CS只能作源操作数。</p>
+<p>​<br> IP寄存器不能作源操作数或目的操作数。</p>
+<p>​     </p>
+<h3 id="堆栈操作指令"><a href="#堆栈操作指令" class="headerlink" title="堆栈操作指令"></a>堆栈操作指令</h3><p>PUSH：操作数进栈</p>
+<p>PUSHA：把AX，CX，DX，BX，SP，BP，SI，DI依次压入堆栈。</p>
+<p>PUSHAD：把EAX，ECX，EDX，EBX，ESP，EBP，ESI，EDI依次压入堆栈。</p>
+<p>指令格式：PUSH (PUSHA/PUSHAD) SRC</p>
+<p><strong>PUSH****：操作数进栈</strong></p>
+<p>入栈指令</p>
+<p>格式：PUSH OPS </p>
+<p>操作：SP ← SP-2/-4，[SP+1][ SP] ← OPS</p>
+<p>操作数类型： OPS可以是存储器、通用寄存器和段寄存器，但不能是立即数。</p>
+<p>说明：PUSH指令先将SP的内容减2，然后再将操作数OPS的内容送入由SP指出的栈顶即偏移地址为SP和SP+1的两个连续字节中。</p>
+<p>   PUSH AX       ；通用寄存器内容入栈</p>
+<p>   PUS CS      ；段寄存器内容入栈</p>
+<p>   PUSH [SI]     ；字存储单元内容入栈</p>
+<p>POP：出栈到目的操作数，把当前的SP所指向的堆栈顶部的一个字送到指定的目的操作数</p>
+<p>POPA：把DI，SI，BP，SP，BX，DX，CX，AX依次弹出堆栈。</p>
+<p>POPAD：把EDI，ESI，EBP，ESP，EBX，EDX，ECX，EAX依次弹出堆栈。</p>
+<p>指令格式：POP (POPA/POPAD) DEST</p>
+<p>POP：出栈到目的操作数，把当前的SP所指向的堆栈顶部的字送到指定的目的操作数</p>
+<p>格式：POP OPD</p>
+<p>操作：OPD ← [SP+1][ SP]，SP ← SP+2</p>
+<p>操作数类型：OPD可以是存储器、通用寄存器或段寄存器（但不能是CS），同样，不能是立即数。</p>
+<p>​<br> 说明：POP指令先将堆栈指针SP所指示的栈顶存储单元的值弹出到操作数OPD中，然后再将SP的内容加2。入栈和出栈操作如图所示。</p>
+<h3 id="数据交换指令"><a href="#数据交换指令" class="headerlink" title="数据交换指令"></a>数据交换指令</h3><p>XCHG：交换两操作数。允许通用寄存器之间，通用寄存器和存储器之间交换数据。</p>
+<p>指令格式：XCHG OPR1，OPR2 </p>
+<p>例</p>
+<p>XCHG EAX，EBX；通用寄存器之间交换数据。</p>
+<p>XCHG ECX，DWORD PTR [ESI + EAX]；通用寄存器和存储器之间交换数据</p>
+<p>注：两操作数不允许同时为存储器操作数，交换指令不影响标志位。</p>
+<h3 id="地址传送指令"><a href="#地址传送指令" class="headerlink" title="地址传送指令"></a>地址传送指令</h3><p>LEA（Load Effective Address）：将源操作数的有效地址传送到通用寄存器。</p>
+<p>指令格式：LEA  REG，MEM</p>
+<p>例</p>
+<p>LEA EBX，[EBP + 2]；将 EBP + 2 的值送入EAX</p>
+<p>MOV ECX，[ESI + EAX]；将存储在地址 EBP + EAX 上的变量值送入 ECX</p>
+<h3 id="标志寄存器传送指令"><a href="#标志寄存器传送指令" class="headerlink" title="标志寄存器传送指令"></a>标志寄存器传送指令</h3><p>PUSHF：16位标志寄存器进栈</p>
+<p>PUSHFD：32位标志寄存器进栈</p>
+<p>POPF：16位标志寄存器出栈</p>
+<p>POPFD：32位标志寄存器出栈</p>
+<h2 id="算术运算指令"><a href="#算术运算指令" class="headerlink" title="算术运算指令"></a>算术运算指令</h2><h3 id="加法指令"><a href="#加法指令" class="headerlink" title="加法指令"></a>加法指令</h3><p>ADD：将源操作数和目的操作数相加，结果送到目的操作数。</p>
+<p>ADC：将源操作数与目的操作数以及CF值相加，结果传送到目的操作数。</p>
+<p>指令格式：ADD (ADC) DEST，SRC</p>
+<p>注：ADD，ADC指令影响的标志位是OF，SF，ZF，AF，PF，CF</p>
+<p>INC：目的操作数加一，结果送入目的操作数</p>
+<p>目的操作数可以为通用寄存器或存储器操作数</p>
+<p>指令格式：INC DEST</p>
+<h3 id="减法指令"><a href="#减法指令" class="headerlink" title="减法指令"></a>减法指令</h3><p>SUB：将目的操作数减去源操作数，结果送入目的操作数。</p>
+<p>SBB：将目的操作数减去源操作数，再减去CF值，结果送入目的操作数。</p>
+<p>指令格式：SUB (SBB) DEST，SRC</p>
+<p>注：SUB，SBB指令影响的标志位是OF，SF，ZF，AF，PF，CF。</p>
+<p>DEC：目的操作数减一，结果送入目的操作数</p>
+<p>目的操作数可以为通用寄存器或存储器操作数。</p>
+<p>指令格式：DEC DEST</p>
+<p>注：INC，DEC指令影响的标志位为OF，SF，ZF，AF，PF。</p>
+<h3 id="乘法指令"><a href="#乘法指令" class="headerlink" title="乘法指令"></a>乘法指令</h3><p>MUL：无符号数乘法指令，将源操作数和累加器中的目的操作数相乘，结果送入累加器中</p>
+<p>IMUL：有符号数乘法指令，将源操作数和累加器中的目的操作数相乘，结果送入累加器中</p>
+<p>指令格式：MUL (IMUL) SRC</p>
+<p>说明：MUL，IMUL指令的源操作数为通用寄存器或存储器操作数，目的操作数缺省存放在ACC累加器（AL，AX，EAX）中。</p>
+<h3 id="除法指令"><a href="#除法指令" class="headerlink" title="除法指令"></a>除法指令</h3><p>DIV：无符号除法指令</p>
+<p>IDIV：有符号除法指令</p>
+<p>指令格式：DIV (IDIV) SRC；假设（EAX）= 7，（EBX）=2</p>
+<p>DIV EBX</p>
+<p>“7÷2”计算结果为，商：(EAX)=3, 余数： (EDX)=1</p>
+<p>说明：DIV、IDIV指令的源操作数作为除数，为通用寄存器或存储器操作数，目的操作数作为被除数，默认存放在EAX中，除法的商也返回至EAX中，而余数则存放于EDX中</p>
+<h2 id="逻辑运算和移位指令"><a href="#逻辑运算和移位指令" class="headerlink" title="逻辑运算和移位指令"></a>逻辑运算和移位指令</h2><h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><p>AND：逻辑与，目的操作数和源操作数按位进行逻辑与运算，结果存目的操作数。</p>
+<p>OR：逻辑或，目的操作数和源操作数按位进行逻辑或运算，结果存目的操作数。</p>
+<p>源操作数可以是通用寄存器、存储器操作数或立即数，目的操作数是通用寄存器或存储器操作数。</p>
+<p>XOR：逻辑异或，目的操作数和源操作数按位进行逻辑异或运算，结果存目的操作数。</p>
+<p>指令格式：AND (OR/XOR/XOR) DEST，SRC</p>
+<p>NOT：逻辑非，对目的操作数按位取反，结果存入目的操作数。</p>
+<p>指令格式：NOT DEST</p>
+<p><strong>TEST****：目的操作数与源操作数按位进行逻辑与操作，并修改标志位，但结果不回送目的操作数。</strong></p>
+<p><strong>指令格式：<strong><strong>TEST DEST</strong></strong>，****SRC</strong></p>
+<p>注：TEST指令常用在检测某些条件是否满足，但又不希望改变原有操作数的情况下。紧跟在这条指令后面的往往是一条条件转移指令，根据测试结果产生分支，转向不同的处理程序</p>
+<p>例如</p>
+<p>TEST EAX，EAX </p>
+<p>JNZ OFFSET FLAT: _main  # 程序跳转到标签 _main 处继续执行</p>
+<h3 id="算数逻辑移位"><a href="#算数逻辑移位" class="headerlink" title="算数逻辑移位"></a>算数逻辑移位</h3><p><strong>SAR****：算术右移</strong></p>
+<p>按照操作数OPRD规定的移位位数，对目的操作数进行右移操作，每移一位，最低位移入标志位CF，最高位(符号位)保持不变。相当于对有符号数进行除2操作</p>
+<p><strong>SHR****：逻辑右移</strong></p>
+<p>按照操作数OPRD规定的移位位数，对目的操作数进行右移操作，每移一位，最低位移入标志位CF，最高位补0</p>
+<p><strong>指令格式：SAR (SHR) DEST****，OPRD</strong></p>
+<p><strong>SAL****：算术左移指令</strong></p>
+<p><strong>SHL****：逻辑左移指令</strong></p>
+<p><strong>指令格式：<strong><strong>SAL (SHL) DEST</strong></strong>，****OPRD</strong></p>
+<p>说明：</p>
+<p>SAL、SHL指令功能完全相同，按照操作数OPRD的规定的移位位数对目的操作数进行左移操作，每移一位，最低位补0，最高位移入标志位CF中</p>
+<p>算术左移和算术右移</p>
+<p>主要用来进行有符号数的倍增、减半</p>
+<p>逻辑左移和逻辑右移</p>
+<p>主要用来进行无符号数的倍增、减半</p>
+<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><p><strong>ROL****：循环左移</strong></p>
+<p><strong>ROR****：循环右移</strong></p>
+<p><strong>指令格式：ROL(ROR) DEST****，OPRD</strong></p>
+<h2 id="串操作指令"><a href="#串操作指令" class="headerlink" title="串操作指令"></a>串操作指令</h2><p>串指连续存放在存储器中的一些数据字节、字或双字。</p>
+<p>串操作允许程序对连续存放的数据块进行操作。</p>
+<p>串操作通常以DS：ESI来寻址源串，以ES：EDI来寻址目的串</p>
+<p>字符串的基本操作</p>
+<table>
+<thead>
+<tr>
+<th><strong>指令名称</strong></th>
+<th>**字节/**<strong>字操作</strong></th>
+<th><strong>字节操作</strong></th>
+<th><strong>字操作</strong></th>
+<th><strong>双字操作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>字符串传送</strong></td>
+<td><strong>MOVS</strong> <strong>目的串，源串</strong></td>
+<td><strong>MOVSB</strong></td>
+<td><strong>MOVSW</strong></td>
+<td><strong>MOVSD</strong></td>
+</tr>
+<tr>
+<td><strong>字符串比较</strong></td>
+<td><strong>CMPS</strong> <strong>目的串，源串</strong></td>
+<td><strong>CMPSB</strong></td>
+<td><strong>CMPSW</strong></td>
+<td><strong>CMPSD</strong></td>
+</tr>
+<tr>
+<td><strong>字符串扫描</strong></td>
+<td><strong>SCAS</strong> <strong>目的串</strong></td>
+<td><strong>SCASB</strong></td>
+<td><strong>SCASW</strong></td>
+<td><strong>SCASD</strong></td>
+</tr>
+<tr>
+<td><strong>字符串装入</strong></td>
+<td><strong>LODS</strong> <strong>源串</strong></td>
+<td><strong>LODSB</strong></td>
+<td><strong>LODSW</strong></td>
+<td><strong>LODSD</strong></td>
+</tr>
+<tr>
+<td><strong>字符串存储</strong></td>
+<td><strong>STOS</strong> <strong>目的串</strong></td>
+<td><strong>STOSB</strong></td>
+<td><strong>STOSW</strong></td>
+<td><strong>STOSD</strong></td>
+</tr>
+</tbody></table>
+<p><strong>MOVS</strong> <strong>目的串，源串</strong></p>
+<p>指令功能：字符串传送指令，把由ESI作指针的源串的字节或字，传送到由EDI作指针的目的串中</p>
+<p><strong>CMPS</strong> <strong>目的串，源串</strong></p>
+<p>指令功能：字符串比较指令，由DS：ESI规定的源串元素减去ES：EDI指出的目的串元素，结果不回送，仅影响标志位CF，AF，PF，OF，ZF和SF</p>
+<p><strong>SCAS</strong>  <strong>目的串</strong></p>
+<p>指令功能：串扫描指令，比较EAX中内容与目的串中内容进行比较，由EAX的内容减去ES：EDI规定的目的串元素，结果不回送，仅影响标志位CF，AF，PF，SF，OF，ZF</p>
+<p><strong>LODS</strong> <strong>源串</strong></p>
+<p>指令功能：串装入指令，将DS：ESI所指的源串元素装入累加器EAX中</p>
+<p><strong>STOS</strong> <strong>目的串</strong></p>
+<p>指令功能：串存储指令，将累加器EAX中值存入ES：EDI所指的目的串存储单元中</p>
+<h2 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h2><h3 id="无条件转移指令"><a href="#无条件转移指令" class="headerlink" title="无条件转移指令"></a>无条件转移指令</h3><table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>JMP</strong></td>
+<td><strong>无条件转移</strong></td>
+</tr>
+<tr>
+<td><strong>CALL</strong></td>
+<td><strong>过程调用</strong></td>
+</tr>
+<tr>
+<td><strong>RET</strong></td>
+<td><strong>过程返回</strong></td>
+</tr>
+</tbody></table>
+<p>条件转移指令是根据上一条指令执行后，CPU设置的状态标志作为判别测试条件，来决定是否转移</p>
+<p>跳转常用标志主要包括ZF，SF等</p>
+<p>每一种条件转移指令都有它的测试条件</p>
+<p>当条件成立，便控制程序转向指令中给出的目的地址</p>
+<p>否则，程序仍按顺序执行</p>
+<h3 id="根据单个标志位的状态判断转移的指令"><a href="#根据单个标志位的状态判断转移的指令" class="headerlink" title="根据单个标志位的状态判断转移的指令"></a>根据单个标志位的状态判断转移的指令</h3><table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>转移条件</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>JC DEST</strong></td>
+<td><strong>CF = 1</strong></td>
+<td>**有进位/**<strong>借位时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JNC DEST</strong></td>
+<td><strong>CF = 0</strong></td>
+<td>**无进位/**<strong>借位时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JE/JZ DEST</strong></td>
+<td><strong>ZF = 1</strong></td>
+<td>**相等/**<strong>等于零时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JNE/JNZ DEST</strong></td>
+<td><strong>ZF = 0</strong></td>
+<td>**不相等/**<strong>不等于零时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JS DEST</strong></td>
+<td><strong>SF = 1</strong></td>
+<td><strong>是负数时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JNS DEST</strong></td>
+<td><strong>SF = 0</strong></td>
+<td><strong>不是负数时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JO DEST</strong></td>
+<td><strong>OF =1</strong></td>
+<td><strong>有溢出时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JNO DEST</strong></td>
+<td><strong>OF = 0</strong></td>
+<td><strong>无溢出时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JP/JPE DEST</strong></td>
+<td><strong>PF = 1</strong></td>
+<td><strong>有偶数个“1”****时转移</strong></td>
+</tr>
+<tr>
+<td><strong>JNP/JPO DEST</strong></td>
+<td><strong>PF = 0</strong></td>
+<td><strong>有奇数个“1”****时转移</strong></td>
+</tr>
+</tbody></table>
+<h3 id="循环控制指令"><a href="#循环控制指令" class="headerlink" title="循环控制指令"></a>循环控制指令</h3><p>这类指令用ECX计数器的内容控制循环次数，先将循环次数存放在ECX中，每循环一次ECX内容减1，直到ECX为0时循环结束</p>
+<p>REP 当CX/ECX&gt;0时重复</p>
+<p>REPE/REPZ 当ZF=1或比较结果相等,且CX/ECX&gt;0时重复</p>
+<p>REPNE/REPNZ 当ZF=0或比较结果不相等,且CX/ECX&gt;0时重复</p>
+<p>REPC 当CF=1且CX/ECX&gt;0时重复</p>
+<p>REPNC 当CF=0且CX/ECX&gt;0时重复</p>
+<h3 id="处理器控制指令"><a href="#处理器控制指令" class="headerlink" title="处理器控制指令"></a>处理器控制指令</h3><p><strong>空操作指令</strong></p>
+<p>NOP（机器码0x90）：空操作，除了使EIP增1外，不做任何操作</p>
+<p><strong>中断指令：</strong></p>
+<p>INT n：软件中断指令，也称为软中断指令，其中n为中断类型号，其值必须在0~255的范围内</p>
+<p>可以在编程时安排在程序中的任何位置上，因此也被称为陷阱中断</p>
+<h2 id="浮点运算指令"><a href="#浮点运算指令" class="headerlink" title="浮点运算指令"></a>浮点运算指令</h2><p>如果一条汇编指令以字母 F 开头，则其大概率为浮点运算指令，CPU中浮点运算单元主要负责处理此类指令</p>
+<p>由于浮点运算过程相对封闭，与软件运行流程、内部逻辑之间的关系较弱，本课程不再讲述此类汇编指令</p>
+<h1 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h1><p>处理器寻找指令和操作数的方式</p>
+<p><strong>指令寻址</strong></p>
+<p>确定下一条要执行指令地址的方法</p>
+<p><strong>操作数寻址</strong></p>
+<p>确定当前指令操作数地址方法</p>
+<h2 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h2><p>顺序寻址</p>
+<p>当程序不发生跳转时，通过EIP自加进行寻址的方式</p>
+<p>跳转寻址</p>
+<p>当程序发生跳转时，下一条要执行的指令的具体地址由跳转指令给出</p>
+<h2 id="操作数寻址"><a href="#操作数寻址" class="headerlink" title="操作数寻址"></a>操作数寻址</h2><p>根据操作数的不同表示，其寻址方式不同</p>
+<p>立即寻址</p>
+<p>寄存器寻址</p>
+<p>直接寻址</p>
+<p>寄存器间接寻址</p>
+<p>寄存器相对寻址</p>
+<p>基址变址寻址</p>
+<p>相对基址变址寻址</p>
+<p>比例变址寻址</p>
+<p>基址比例变址寻址</p>
+<p>相对基址比例变址寻址</p>
+<p><strong>隐含寻址</strong></p>
+<p>  — 操作数隐含的由累加器给出，即某指令由固定的操作数，不需要给出<br>   — 如 8086汇编语言 <strong>CWD</strong> 指令，其默认把 <strong>AX</strong> 寄存器中的内容按<strong>符号位</strong>拓展成 **{**<strong>DX</strong>, <strong>AX}</strong> 双字</p>
+<p>  —— <strong>DX</strong> = 0xFFFF 或者 0x0000</p>
+<p>  —— <strong>CWD</strong>，<strong>C</strong>hange <strong>W</strong>ord to <strong>D</strong>ouble word </p>
+<p>示例：mov ax, 0x80ff</p>
+<p>AH= 0x ? , AL= 0x ?</p>
+<p>依据有符号的十进制表示，AH = ？， AL= ？</p>
+<p>注：计算机使用“补码”来存储数据</p>
+<p>正数的补码等于其本身，负数的补码等于其反码+1</p>
+<p>采用补码可以简化计算机硬件电路设计</p>
+<p>带符号计算，这意味着可直接使用加法器来完成减法操作，而无需额外地设计减法器</p>
+<p>0无   符号歧义，如 0b0000 = 0，而 0b1000 = -128</p>
+<p>数的表示范围更大，如 8bit 长度可以表示 [-128, 127]</p>
+<p>示例：mov ax, 0x80ff</p>
+<p>AH= 0x 80, AL= 0x ff</p>
+<p>​<br> 依据有符号的十进制表示，AH = -128， AL= -1</p>
+<p>沿着顺时针方向，越往后越大</p>
+<h2 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h2><p>操作数存放在寄存器中，指令执行时会到指定寄存器中取出相应的操作数</p>
+<p>源和目的操作数都可以是寄存器</p>
+<p>例： MOV EAX，EBX ；将EBX中的数据拷贝到EAX中</p>
+<p>寄存器寻址只访问寄存器，不访问存储器，速度快</p>
+<p>指令中可以引用的寄存器及其符号名称如下：</p>
+<p>32位寄存器：EAX、EBX、ECX、EDX、ESI、EDI、ESP和EBP等</p>
+<p>16位寄存器：AX、BX、CX、DX、SI、DI、SP和BP</p>
+<p>8位寄存器：AH、AL、BH、BL、CH、CL、DH和DL</p>
+<p>例： MOV EAX，EBX；寄存器之间执行数据拷贝</p>
+<p>若执行前EAX = 3047H，EBX =2378H，执行后EAX = EBX= 2378H。</p>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
 </search>
